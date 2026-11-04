@@ -9,8 +9,10 @@ Every file a workflow touches is one of three kinds. Label each one, and the rul
 | Kind | What it is | Lives in | Committed? | On a re-run |
 |---|---|---|---|---|
 | **Raw** | An input exactly as it arrived: an export, PDF, or spreadsheet | `raw/` | **Never** | Replaced with the new input |
-| **Derived** | Made by a step from raw inputs, and can be remade any time | `derived/` | Only if the workflow says so | Regenerated from scratch |
-| **Historical** | A finished result someone received | `outputs/history/` | **Yes** | **Never touched.** A new run adds a new file |
+| **Derived** | Made by a step from raw inputs, and can be remade any time | `derived/` | **Not in this repo** | Regenerated from scratch |
+| **Historical** | A finished result someone received | `outputs/history/` | **Not in this repo** (yes, in a private work repo) | **Never touched.** A new run adds a new file |
+
+**Why "not in this repo":** this repo is public (see [`CONTRIBUTING.md`](../CONTRIBUTING.md)). Derived files and finished results hold real data, so here they stay on your computer. In a private work repo, you'd commit finished results so the history is kept and shared; the never-overwrite rule is the same either way.
 
 **Quick test:** if you deleted it, could the workflow make it again from the inputs?
 
@@ -18,18 +20,19 @@ Every file a workflow touches is one of three kinds. Label each one, and the rul
 - **Yes:** derived.
 - **Yes, but the copy people already received must never change:** historical.
 
-## Keeping raw files out of GitHub
+## Keeping real data out of GitHub
 
 Raw inputs often contain customer data. They stay off GitHub. (They don't stay away from Claude: when Claude Code reads a file, its contents go to Anthropic, so the AI acceptable use policy decides what you may put in `raw/`.) `.gitignore` is the list of files Git ignores, "intentionally untracked files that Git should ignore". This repo's `.gitignore`:
 
 - ignores everything in `raw/` (except an empty placeholder file, `.gitkeep`, so the folder exists)
 - ignores common export formats (`.csv`, `.tsv`, `.xlsx`, `.xls`, `.pdf`, `*.export.json`, `exports/`) anywhere in the repo
-- makes an exception for `outputs/history/`, because finished results are committed on purpose
+- ignores everything in `derived/` and `outputs/history/`, because this repo is public
+- makes an exception for `golden/`, because the golden example is made-up data and is committed on purpose
 
 **Two gotchas, from Git's docs:**
 
 1. `.gitignore` doesn't affect files Git is already tracking: "Files already tracked by Git are not affected." If a raw file was committed before you ignored it, ignoring it now doesn't remove it. Ask Claude to stop tracking it, and tell Sean: it's already on GitHub, in the history.
-2. Check before every commit: run `git status` and read the list. Nothing from `raw/` should be there.
+2. Check before every commit: run `git status` and read the list. Nothing from `raw/`, `derived/`, or `outputs/history/` should be there.
 
 ## Keeping re-runs from breaking history
 

@@ -1,12 +1,11 @@
 # Session 1 hands-on: get set up on GitHub
 
-**Goal:** leave the session with a GitHub account, the GitHub CLI (`gh`) signed in, and access to this repo, so Session 2 starts on the work instead of setup.
+**Goal:** leave the session with a GitHub account, the GitHub CLI (`gh`) signed in, and a check that you can reach this repo, so Session 2 starts on the work instead of setup.
 
-**You can't open this repo yet.** It's private, and you get access at step 8. Sean Larkin sends you this checklist and the install guide before Session 1. The full install guide, with the official source for every step, is [`docs/install-github-cli.md`](../../docs/install-github-cli.md). Keep it open next to this checklist.
+This repo is public, so you can read all of it on github.com before you install anything. The full install guide, with the official source for every step, is [`docs/install-github-cli.md`](../../docs/install-github-cli.md). Keep it open next to this checklist. To have Claude walk you through it, see [`docs/setup-with-claude.md`](../../docs/setup-with-claude.md), part A.
 
 **Before you start:**
 
-- **Company-managed laptop?** Installing Git and the GitHub CLI asks for your computer's administrator password. If you don't have one, tell Sean before Session 1, so IT can install them for you.
 - **Mac:** if you can, do step 3 (Apple's command line tools) the day before. It's a big download.
 
 Work through the steps in order. Each one says how you know it's done.
@@ -35,13 +34,12 @@ Work through the steps in order. Each one says how you know it's done.
 7. [ ] **Tell Git who you are.** Follow step 7 of the install guide: two commands, with your own name and your Opensend email in place of the examples.
    *Done when* `git config --global user.email` prints your email.
 
-8. [ ] **Get access to this repo.** Send your GitHub username to Sean Larkin in a Slack message. He adds you to `fueled-io`, Opensend's GitHub organization. GitHub emails you an invitation from **fueled-io**: open it and click **Join**. (Or go to <https://github.com/orgs/fueled-io/invitation>.) Accept it within 7 days, or it expires and Sean has to send it again.
-   Then check you can save changes to the repo, not just read it. Type this and press Enter:
+8. [ ] **Check you can reach this repo from the terminal.** Type this and press Enter:
 
    ```
-   gh repo view fueled-io/os-claude-advanced-training --json viewerPermission
+   gh repo view fueled-io/os-claude-advanced-training
    ```
 
-   *Done when* it shows `"viewerPermission":"WRITE"` (or `MAINTAIN` or `ADMIN`). If it shows `READ`, or an error, message Sean: you need write access before Session 2.
+   *Done when* it prints the start of this repo's README. You don't need any access beyond that: in Session 2 you make your own copy (a fork) and send your work back as a pull request.
 
 Stuck? Write down the exact message you see and send it to Sean Larkin on Slack, or bring it to Session 2.

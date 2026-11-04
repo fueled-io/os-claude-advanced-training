@@ -8,6 +8,7 @@
 
 - **Procedures as files,** never as memory of what worked last time.
 - **Pinned inputs and explicit output formats.** A sample output file in the repo is the best spec.
+- **Spreadsheets: edit them, or have a script make them?** Having Claude edit a spreadsheet directly starts over every run, can come out differently, and leaves no diff. Having Claude write a Python script that reads `raw/` and writes the spreadsheet gives the same result every run, and the script is a file you review once. Reference: [`docs/spreadsheets-and-scripts.md`](../../docs/spreadsheets-and-scripts.md).
 - **Golden examples:** one known input with a known correct output, so anyone can check the workflow still works. Template: [`templates/golden-example-README.template.md`](../../templates/golden-example-README.template.md). Reference: [`docs/golden-examples.md`](../../docs/golden-examples.md).
 - **The handoff test:** a teammate clones the repo cold and runs it. A different answer means the repo is missing something.
 - **The honest limits:** claude.ai can't pin model or effort per project, so some workflows need a real agent behind an API. If yours is one of them, flag it to Sean and we'll scope it.

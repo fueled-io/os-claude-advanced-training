@@ -4,32 +4,58 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Session 2: GitHub as your backend</title>
-<link rel="stylesheet" href="deck.css">
+<link rel="stylesheet" href="deck.css?v=2026-11-04d">
 </head>
 <body>
 <!-- Source of truth: AGENDA.md, sessions/02/, and docs/. Change those first, then this deck. -->
 <main class="deck">
 
-  <section class="slide band">
+  <section class="slide band cover">
     <span class="eyebrow">We're All Software Developers Now · Session 2 of 4</span>
     <h1 class="hero">GitHub as your backend</h1>
     <p class="lede">A repo is a project folder that remembers, shows what changed, and can be handed to someone else.</p>
     <p class="meta">60 minutes · 30 teaching · 30 hands-on</p>
   </section>
 
-  <section class="slide">
+  <section class="slide dense">
     <span class="eyebrow">Today</span>
     <h2 class="title">Sixty minutes</h2>
-    <table class="agenda"><tbody>
-      <tr><td class="t">30 min</td><td>The five verbs · README and CLAUDE.md · memories, context, skills · Code vs. Chat/Cowork · .gitignore · why the repo is the source of truth</td></tr>
-      <tr><td class="t">30 min</td><td>Hands-on: clone the starter repo, write a CLAUDE.md, read a diff</td></tr>
-    </tbody></table>
+    <div class="cols agenda-cols">
+      <div class="panel">
+        <h3>Teaching · 30 min</h3>
+        <ul class="points">
+          <li>Under the hood: the six things Claude does with a repo</li>
+          <li>Branches, forks, and pull requests</li>
+          <li>README and CLAUDE.md</li>
+          <li>Memories, context, and skills</li>
+          <li>Claude Code vs. Chat and Cowork, and scheduled tasks</li>
+          <li>What never goes in a repo</li>
+          <li>Why the repo is the source of truth</li>
+        </ul>
+      </div>
+      <div class="panel good">
+        <h3>Hands-on · 30 min</h3>
+        <ul class="points">
+          <li>Fork the starter repo</li>
+          <li>Write a CLAUDE.md for one real workflow</li>
+          <li>Have Claude make a change, and read the diff</li>
+          <li>Open a pull request</li>
+        </ul>
+      </div>
+    </div>
     <div class="slide-foot"><span>Session 2 · GitHub as your backend</span><span>Agenda</span></div>
   </section>
 
+  <section class="slide band">
+    <span class="eyebrow">Under the hood</span>
+    <h2 class="title" style="font-size:2.6em">You talk to Claude. Claude runs Git.</h2>
+    <p class="lede">You don't need to be a software developer, or type these commands yourself. But knowing what they do, in plain terms, lets you read what Claude is about to do and say no when it's wrong.</p>
+    <div class="slide-foot"><span>Session 2 · GitHub as your backend</span><span>Teaching</span></div>
+  </section>
+
   <section class="slide dense">
-    <span class="eyebrow">The five verbs</span>
-    <h2 class="title">Everything you'll do with a repo</h2>
+    <span class="eyebrow">Under the hood · six verbs</span>
+    <h2 class="title">What Claude does with a repo, for you</h2>
     <table class="grid">
       <thead><tr><th>Verb</th><th>Command</th><th>What it does</th></tr></thead>
       <tbody>
@@ -38,9 +64,10 @@
         <tr><td><strong>commit</strong></td><td><code>git commit -m "note"</code></td><td>Save a snapshot of your changes, with a note saying what and why</td></tr>
         <tr><td><strong>push</strong></td><td><code>git push</code></td><td>Send your commits up to GitHub so others can see them. A new branch's first push: <code>git push -u origin alex-kim</code></td></tr>
         <tr><td><strong>pull</strong></td><td><code>git pull</code></td><td>Bring down what others have pushed since you last looked</td></tr>
+        <tr><td><strong>merge</strong></td><td><code>git merge</code>, or <strong>Merge</strong> on a pull request</td><td>Combine one branch's changes into another. Merging a pull request is how a change lands in <code>main</code></td></tr>
       </tbody>
     </table>
-    <p class="fine">Exact commands and sources: docs/git-five-verbs.md</p>
+    <p class="fine">Exact commands and sources: docs/git-verbs.md</p>
     <div class="slide-foot"><span>Session 2 · GitHub as your backend</span><span>Teaching</span></div>
   </section>
 
@@ -50,7 +77,8 @@
     <ul class="points">
       <li>A <strong>branch</strong> is a separate line of work inside the same repo</li>
       <li>Make one: <code>git switch -c alex-kim</code> · move between them: <code>git switch alex-kim</code></li>
-      <li>In this series, <strong>everyone works on their own branch</strong>, named after themselves, so nobody's changes land on anyone else's</li>
+      <li>In this series, <strong>everyone works on their own branch</strong>, named after themselves, in their own <strong>fork</strong>: a copy of the repo on GitHub under their username</li>
+      <li>A <strong>pull request</strong> asks the repo's owner to review your branch, and merge it if it's right. Open it once; every push adds to it</li>
     </ul>
     <div class="slide-foot"><span>Session 2 · GitHub as your backend</span><span>Teaching</span></div>
   </section>
@@ -119,15 +147,60 @@
     <div class="slide-foot"><span>Session 2 · GitHub as your backend</span><span>Teaching</span></div>
   </section>
 
+  <section class="slide dense">
+    <span class="eyebrow">Scheduled tasks · formerly called routines</span>
+    <h2 class="title">In the cloud, or on your computer</h2>
+    <table class="grid">
+      <thead><tr><th></th><th>Cloud scheduled task (formerly a routine)</th><th>Local scheduled task (Claude Desktop)</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Runs on</strong></td><td>Anthropic's cloud</td><td>Your computer</td></tr>
+        <tr><td><strong>Your computer</strong></td><td>Can be off</td><td>Must be awake, with Claude Desktop open</td></tr>
+        <tr><td><strong>Sees</strong></td><td>Only what's on GitHub: a fresh copy of the repo</td><td>Everything in the folder, including <code>raw/</code></td></tr>
+        <tr><td><strong>Starts on</strong></td><td>A schedule, an API call, or a GitHub event</td><td>A schedule</td></tr>
+        <tr><td><strong>Set it up</strong></td><td>claude.ai/code/routines, or <code>/schedule</code></td><td>Claude Desktop → Code → Scheduled</td></tr>
+      </tbody>
+    </table>
+    <p class="ask"><code>raw/</code> never goes to GitHub, so a cloud task can't see it. A workflow that reads <code>raw/</code> runs as a local task.</p>
+    <p class="fine">Details and sources: docs/code-vs-chat.md</p>
+    <div class="slide-foot"><span>Session 2 · GitHub as your backend</span><span>Teaching</span></div>
+  </section>
+
   <section class="slide">
     <span class="eyebrow">.gitignore for raw inputs</span>
     <h2 class="title">Some files never go to GitHub</h2>
-    <p class="copy">Exports, PDFs, and customer data stay off GitHub. <code>.gitignore</code> is the list of files git refuses to commit. This repo's says:</p>
+    <p class="copy">Exports, PDFs, spreadsheets, and your workflow's real data stay on your computer. <code>.gitignore</code> is the list of files Git refuses to commit. This repo's says:</p>
     <div class="callout">
       <span class="tag">.gitignore (excerpt)</span>
-      <code>raw/*</code> · <code>*.csv</code> · <code>*.xlsx</code> · <code>*.pdf</code> · <code>*.export.json</code> · <code>exports/</code>
+      <code>raw/*</code> · <code>derived/*</code> · <code>outputs/history/*</code> · <code>*.csv</code> · <code>*.xlsx</code> · <code>*.pdf</code> · <code>.env</code>
     </div>
     <p class="ask">It doesn't hide them from Claude. Anything Claude Code reads goes to Anthropic, so the AI acceptable use policy decides what goes in <code>raw/</code>.</p>
+    <div class="slide-foot"><span>Session 2 · GitHub as your backend</span><span>Teaching</span></div>
+  </section>
+
+  <section class="slide dense">
+    <span class="eyebrow">What .gitignore can't catch</span>
+    <h2 class="title">Some data never goes in any repo</h2>
+    <ul class="points">
+      <li><strong>Personal information (PII):</strong> names, emails, phone numbers, and addresses of real people</li>
+      <li><strong>Secrets:</strong> passwords, API keys, and tokens</li>
+      <li><strong>Client details and real business numbers</strong></li>
+    </ul>
+    <p class="copy">They hide inside files you do commit, like a CLAUDE.md or a commit message. <code>.gitignore</code> only stops whole files, so read every diff.</p>
+    <p class="ask">That goes for private repos too. Private limits who can read it; it doesn't make secrets or personal data safe to commit.</p>
+    <div class="slide-foot"><span>Session 2 · GitHub as your backend</span><span>Teaching</span></div>
+  </section>
+
+  <section class="slide dense">
+    <span class="eyebrow">What "public" means</span>
+    <h2 class="title">Anyone on the internet can read this repo</h2>
+    <ul class="points">
+      <li><strong>Public</strong> is a GitHub setting: anyone can read the repo without an account, and that includes your fork, your branch, and your pull request</li>
+      <li><strong>Private</strong> is the other setting: only people who are given access can read it</li>
+      <li><strong>This training repo is public,</strong> so <code>raw/</code>, <code>derived/</code>, and <code>outputs/history/</code> all stay on your computer</li>
+      <li><strong>Need an example?</strong> Make one up: "Client A", "$12,345"</li>
+    </ul>
+    <p class="ask">Deleting it later doesn't unpublish it. Not sure? Don't commit it.</p>
+    <p class="fine">The full list: CONTRIBUTING.md</p>
     <div class="slide-foot"><span>Session 2 · GitHub as your backend</span><span>Teaching</span></div>
   </section>
 
@@ -147,12 +220,12 @@
     <span class="eyebrow">Hands-on · 30 minutes</span>
     <h2 class="title">Your first repo change</h2>
     <ol class="steps">
-      <li><strong>Clone:</strong> <code>gh repo clone fueled-io/os-claude-advanced-training</code></li>
+      <li><strong>Fork and download:</strong> <code>gh repo fork fueled-io/os-claude-advanced-training --clone</code></li>
       <li><strong>Go in, make your branch:</strong> <code>cd os-claude-advanced-training</code> · <code>git switch -c alex-kim</code>, with your own name</li>
       <li><strong>Start Claude Code:</strong> <code>claude</code></li>
       <li><strong>Write a CLAUDE.md</strong> for one real workflow from <code>templates/CLAUDE.template.md</code></li>
       <li><strong>Have Claude make a change.</strong> Read the diff, then choose plain <strong>Yes</strong>, never "allow all edits"</li>
-      <li><strong>Commit and push</strong> your branch. Nothing from <code>raw/</code></li>
+      <li><strong>Commit, push, open a pull request.</strong> Nothing from <code>raw/</code>, nothing sensitive</li>
     </ol>
     <p class="fine">Checklist with "done when" for every step: sessions/02/exercise.md</p>
     <div class="slide-foot"><span>Session 2 · GitHub as your backend</span><span>Hands-on</span></div>
@@ -164,14 +237,14 @@
     <p class="lede">Move one recurring workflow or daily task into the repo.</p>
     <ul class="points">
       <li>Its inputs go in <code>raw/</code>, off GitHub. Only files the AI policy allows</li>
-      <li>How you do it today goes in your CLAUDE.md. Messy is fine</li>
-      <li>Commit and push your branch</li>
+      <li>How you do it today goes in your CLAUDE.md. Messy is fine; no client names or real numbers</li>
+      <li>Commit and push your branch. Your pull request picks it up</li>
     </ul>
     <p class="fine">Details: sessions/02/assignment.md</p>
     <div class="slide-foot"><span>Session 2 · GitHub as your backend</span><span>Assignment</span></div>
   </section>
 
 </main>
-<script src="deck.js"></script>
+<script src="deck.js?v=2026-11-04d"></script>
 </body>
 </html>

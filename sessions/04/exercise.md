@@ -1,23 +1,22 @@
 # Session 4 hands-on: the handoff test
 
-**Goal:** run your partner's workflow from their branch, cold, and get the same answer they got.
+**Goal:** run your partner's workflow from their pull request, cold, and get the same answer they got.
 
-**Before you start:** pair up. Tell your partner your branch name.
+**Before you start:** pair up. Tell your partner your pull request's number: it's the `#` number on <https://github.com/fueled-io/os-claude-advanced-training/pulls>.
 
-1. [ ] **Make sure your own repo has a golden example.** One known input and its known correct output, described with [`templates/golden-example-README.template.md`](../../templates/golden-example-README.template.md). If the input is raw data that can't go on GitHub, say in the golden example README where your partner can get it.
-   *Done when* your golden example is committed and pushed on your branch.
+1. [ ] **Make sure your own repo has a golden example.** One known input and its known correct output, in `golden/`, described with [`templates/golden-example-README.template.md`](../../templates/golden-example-README.template.md). This repo is public, so both are **made-up data**: invented names and amounts, in the same format as the real thing. See [`docs/golden-examples.md`](../../docs/golden-examples.md).
+   *Done when* your golden example is committed and pushed, and shows in your pull request.
 
 2. [ ] **Get your partner's work.** In a terminal, inside the repo folder:
 
    ```
-   git pull
-   git switch sam-lee
+   gh pr checkout 12
    ```
 
-   Use your partner's branch name in place of `sam-lee`. `git pull` brings down everything new from GitHub, including your partner's branch. `git switch` moves you onto it.
-   *Done when* the terminal says `Switched to branch` followed by your partner's name.
+   Use your partner's pull request number in place of `12`. This downloads their branch from their fork and moves you onto it.
+   *Done when* the terminal says it switched to a branch named after your partner.
 
-3. [ ] **Get the golden input.** Follow their golden example README to put the input file in `raw/`.
+3. [ ] **Get the golden input.** Follow their golden example README to copy the input file from `golden/` into `raw/`.
    *Done when* the input is in place, without asking your partner anything they didn't write down.
 
 4. [ ] **Run it cold.** Start Claude Code and ask it to run the workflow in `WORKFLOW.md`, one step at a time, checking each done-check. Don't ask your partner for help. Write down every question you would have asked them.

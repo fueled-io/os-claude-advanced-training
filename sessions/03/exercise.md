@@ -18,17 +18,17 @@
 
 4. [ ] **Label every file.** Ask Claude Code to list every file your workflow reads or writes and label each one:
    - **raw:** an input exactly as it arrived. Lives in `raw/`. Never committed.
-   - **derived:** made by a step and can be remade any time. Lives in `derived/`.
-   - **historical:** a finished result. Lives in `outputs/history/`. Committed, and never overwritten by a re-run.
+   - **derived:** made by a step and can be remade any time. Lives in `derived/`. Stays on your computer.
+   - **historical:** a finished result. Lives in `outputs/history/`. Never overwritten by a re-run. In a private work repo you'd commit it; this repo is public, so it stays on your computer.
 
    Add the labels to `WORKFLOW.md`.
    *Done when* every file has exactly one label.
 
-5. [ ] **Keep raw files out of GitHub.** Any raw file that isn't in `raw/` either moves into `raw/` or gets a line in `.gitignore`. Then run `git status`.
-   *Done when* `git status` lists no raw files.
+5. [ ] **Keep real data out of GitHub.** Any raw file that isn't in `raw/` either moves into `raw/` or gets a line in `.gitignore`. Then run `git status`.
+   *Done when* `git status` lists nothing from `raw/`, `derived/`, or `outputs/history/`.
 
 6. [ ] **Protect history.** Make sure the step that writes the final output creates a new file each run (for example with the date in the name) in `outputs/history/`, and never writes over an old one.
    *Done when* the last step's file says so in its done-check.
 
-7. [ ] **Commit and push.** Read the diff, check nothing from `raw/` is included, commit, push.
-   *Done when* `WORKFLOW.md` and `steps/` show on your branch on GitHub.
+7. [ ] **Commit and push.** Read the diff. Check nothing from `raw/` is included, and the step files name no client and quote no real number. Commit, push.
+   *Done when* `WORKFLOW.md` and `steps/` show in your pull request on GitHub.

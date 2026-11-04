@@ -12,11 +12,9 @@
 [Setting your username in Git](https://docs.github.com/en/get-started/git-basics/setting-your-username-in-git)
 
 > **Flagged:** three things differ from what you might expect.
-> 1. **You need Git as well as `gh`.** `gh` hands downloading (`gh repo clone`) to Git. GitHub's "Set up Git" page says to install Git. No official page says `gh` installs Git for you, so step 3 installs it.
+> 1. **You need Git as well as `gh`.** `gh` hands downloading (`gh repo fork --clone`) to Git. GitHub's "Set up Git" page says to install Git. No official page says `gh` installs Git for you, so step 3 installs it.
 > 2. **On a Mac, the only official ways to install `gh` are Homebrew and the downloadable files.** The downloadable Mac installers are currently unsigned, so macOS will warn about them. This guide uses Homebrew.
 > 3. **Two-factor authentication (2FA) is recommended, not required,** for new GitHub accounts, and Opensend's GitHub organization (`fueled-io`) doesn't require it either (checked 2026-11-03). Turn it on anyway.
-
-**Admin rights:** installing Git, Homebrew and `gh` asks for your computer's administrator password. On a company-managed laptop you may not have one. If an installer asks for a password you don't know, or says you aren't an administrator, stop and tell Sean Larkin; IT can install them for you.
 
 `gh` is GitHub's command-line tool: it lets you sign in to GitHub and download repos by typing commands in a terminal. A **terminal** is a window where you type commands instead of clicking.
 
