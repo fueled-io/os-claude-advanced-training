@@ -94,6 +94,8 @@ blockquote.quote{margin:.35em 0 0;font-family:var(--display);font-weight:800;fon
 .band blockquote.quote{color:var(--on-green)}
 .cite{margin-top:1.4em;font-size:.72em;line-height:1.5;color:var(--ink-3)}
 .band .cite{color:color-mix(in srgb,var(--on-green) 70%,transparent)}
+.band .cite a{color:var(--lime);text-underline-offset:.2em}
+.band .cite a:hover{color:var(--on-green)}
 
 /* ---------- cost ledger: one block per 30 minutes ---------- */
 .ledger{margin-top:1em;display:grid;grid-template-columns:auto 1fr auto;column-gap:1.1em;max-width:52em}
