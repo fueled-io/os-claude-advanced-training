@@ -89,6 +89,25 @@ h2.title{font-weight:800;font-size:2.05em;line-height:1.05;margin-top:.2em}
 .ask{margin-top:1.1em;align-self:flex-start;background:var(--lime);color:var(--ink);border-radius:10px;padding:.55em .9em;font-weight:650;font-size:.95em}
 .band .ask strong{color:var(--ink)}
 
+/* ---------- quote slide ---------- */
+blockquote.quote{margin:.35em 0 0;font-family:var(--display);font-weight:800;font-size:2.5em;line-height:1.08;text-wrap:balance;max-width:20em}
+.band blockquote.quote{color:var(--on-green)}
+.cite{margin-top:1.4em;font-size:.72em;line-height:1.5;color:var(--ink-3)}
+.band .cite{color:color-mix(in srgb,var(--on-green) 70%,transparent)}
+
+/* ---------- cost ledger: one block per 30 minutes ---------- */
+.ledger{margin-top:1em;display:grid;grid-template-columns:auto 1fr auto;column-gap:1.1em;max-width:52em}
+.ledger .row{display:contents}
+.ledger .row > span{padding:.55em 0;border-bottom:1px solid var(--border-soft);display:flex;align-items:center}
+.ledger .row:last-child > span{border-bottom:0}
+.ledger .who{font-weight:650;color:var(--ink);white-space:nowrap}
+.ledger .blocks{gap:.25em;flex-wrap:nowrap}
+.ledger .b{font-style:normal;display:inline-flex;align-items:center;justify-content:center;width:2.7em;height:2.1em;border-radius:7px;background:var(--ink);color:var(--card);font-size:.78em;font-weight:650;font-variant-numeric:tabular-nums}
+.ledger .b.save{background:var(--lime);color:var(--ink);border:1px solid var(--lime-dark)}
+.ledger .sum{color:var(--ink-2);white-space:nowrap;justify-content:flex-end}
+.ledger .sum strong{font-size:1.15em}
+.ledger .saved .sum strong{color:var(--green-dark)}
+
 /* ---------- lists ---------- */
 ul.points{list-style:none;margin:.9em 0 0;padding:0;max-width:44em}
 ul.points li{position:relative;padding:.42em 0 .42em 1.1em;border-bottom:1px solid var(--border-soft);color:var(--ink-2);line-height:1.45}

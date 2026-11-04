@@ -11,6 +11,7 @@ Jessica Wallen introduces our AI acceptable use policy (link coming). It decides
 ## Teaching (25 minutes)
 
 - **What is AI slop?** Output nobody asked for, claims the sender can't defend, length that hides the answer, work that transfers effort to the reader.
+- **Slop grenades:** Shopify CEO Tobi Lütke's name for AI output people send without reading: "We call those 'slop grenades' that people toss at each other" ([The Knowledge Project podcast, via Fortune, 2026-09-17](https://fortune.com/2026/09/17/shopify-tobias-lutke-ai-slop-grenades/)). Skipping review saves the sender 30 minutes, but every reader then spends 30 minutes reviewing it: 90 minutes for 3 readers, 300 for a team of 10. Claude should save the reader time, not add to it.
 - **The sender's contract:** you own every claim in anything you send. Claude drafts, you sign.
 - **A pre-send checklist:** does it answer a question someone asked, could you defend every number, is it shorter than what it replaces. The checklist is a file in this repo: [`checklists/pre-send.md`](../../checklists/pre-send.md).
 - **Live demo:** the same request done as slop and done well, side by side.
