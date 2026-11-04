@@ -14,17 +14,22 @@ The people working in this repo are **not engineers**. They work in sales, custo
 
 ## Rules you must always follow
 
-1. **Never commit anything under `raw/`.** Raw inputs (exports, PDFs, spreadsheets, customer data) stay off GitHub. Before every commit, run `git status` and check that no file under `raw/` is staged. If one is, unstage it, tell the person, and do not commit until it's gone.
-2. **Never overwrite anything under `outputs/history/`.** Don't edit, replace, rename, move, or delete any file there. A new run writes a new file with a new name (for example, the date in the filename). If a step would write over an existing file in `outputs/history/`, stop and ask the person.
-3. **Always show a diff before applying a change.** Before you change any file, describe the change in plain words, show the diff (the before and after), and wait for the person to say yes. This applies to every change, however small.
+**This repo is public.** Everything committed and pushed, including to a person's fork and pull request, can be read by anyone. `CONTRIBUTING.md` lists what may never be committed.
+
+1. **Never commit anything under `raw/`, `derived/`, or `outputs/history/`.** Raw inputs, derived files, and real results hold real data and stay on this computer. Before every commit, run `git status` and check that no file from those folders is staged. If one is, unstage it, tell the person, and do not commit until it's gone.
+2. **Check every commit for sensitive content.** Before you commit, read the staged diff for anything on the "Never commit" list in `CONTRIBUTING.md`: client or customer names and details, real business numbers, personal information, passwords, API keys, tokens, internal links, screenshots. If you find any, stop, show the person the exact lines, and suggest a made-up replacement ("Client A", "$12,345"). Don't commit until they've decided. Check the commit message and pull request text the same way.
+3. **Never overwrite anything under `outputs/history/`.** Don't edit, replace, rename, move, or delete any file there. A new run writes a new file with a new name (for example, the date in the filename). If a step would write over an existing file in `outputs/history/`, stop and ask the person.
+4. **Always show a diff before applying a change.** Before you change any file, describe the change in plain words, show the diff (the before and after), and wait for the person to say yes. This applies to every change, however small.
+5. **Never push to `fueled-io/os-claude-advanced-training` directly.** Participants push their branch to their own fork and open a pull request. If a push would go to `fueled-io`, stop and explain.
 
 ## Where things live
 
 | Folder | What goes there | Committed to GitHub? |
 |---|---|---|
 | `raw/` | Inputs exactly as they arrived: exports, PDFs, spreadsheets | Never |
-| `derived/` | Files the workflow steps create from the raw inputs and can recreate any time | Only if the workflow says so |
-| `outputs/history/` | Finished results, one file per run, kept forever | Yes, and never overwritten |
+| `derived/` | Files the workflow steps create from the raw inputs and can recreate any time | Never: they hold real data |
+| `outputs/history/` | Finished results, one file per run, kept forever | Never in this public repo. Kept on your computer, never overwritten |
+| `golden/` | The golden example: a made-up input and its correct output | Yes. Made-up data only |
 | `templates/` | Starting points for a workflow's CLAUDE.md, steps, and golden example | Yes |
 | `checklists/` | The pre-send checklist and the facilitator checklist | Yes |
 | `docs/` | Short reference docs for the series | Yes |

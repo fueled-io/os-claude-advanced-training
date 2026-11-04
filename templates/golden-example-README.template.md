@@ -2,8 +2,8 @@
 
 <!--
   Golden-example README template.
-  Put your copy at golden/README.md (or next to the golden files) and replace
-  every [bracketed] part. Delete these comment blocks when you're done.
+  Put your copy at golden/README.md and replace every [bracketed] part.
+  This repo is public: the golden input and output are made-up data. Delete these comment blocks when you're done.
 -->
 
 A golden example is one known input with a known correct output. Run the workflow on the input. If you get the output, the workflow still works.
@@ -12,19 +12,19 @@ A golden example is one known input with a known correct output. Run the workflo
 
 | File | Where to get it | Notes |
 |---|---|---|
-| `[file]` | [In this folder / or: raw data that can't be committed, so here is exactly where to get it] | [Date range, filters, or the version of the export] |
+| `golden/[file]` | In this folder. Made-up data in the same format as [the real export, described in words] | [What cases it covers: a duplicate, a blank, a refund] |
 
-<!-- If the input is raw data that can't go on GitHub, say exactly where a teammate can get the same file. If they can't get exactly the same input, the test means nothing. -->
+<!-- Never a real export, client name, or real amount. Describe where the real input comes from in words, not with a link. -->
 
 ## The correct output
 
 | File | What to compare |
 |---|---|
-| `[file]` | [The values that must match exactly, for example the totals row and the row count, and anything allowed to differ, such as a timestamp] |
+| `golden/[file]` | [The values that must match exactly, for example the totals row and the row count, and anything allowed to differ, such as a timestamp] |
 
 ## How to run it
 
-1. Put the input file in `raw/`.
+1. Copy the input file from `golden/` into `raw/`.
 2. Ask Claude to run `WORKFLOW.md` one step at a time.
 3. Compare the result with the correct output above.
 

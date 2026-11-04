@@ -10,7 +10,10 @@
 [diff](https://git-scm.com/docs/git-diff) ·
 [switch](https://git-scm.com/docs/git-switch) ·
 [branch](https://git-scm.com/docs/git-branch) ·
-and [`gh repo clone`](https://cli.github.com/manual/gh_repo_clone)
+[`gh repo clone`](https://cli.github.com/manual/gh_repo_clone) ·
+[`gh repo fork`](https://cli.github.com/manual/gh_repo_fork) ·
+[`gh pr create`](https://cli.github.com/manual/gh_pr_create) ·
+and [`gh pr checkout`](https://cli.github.com/manual/gh_pr_checkout)
 
 A **repo** (repository) is a project folder that Git watches. Git remembers every saved version, shows what changed, and lets you hand the whole thing to someone else. GitHub is where the shared copy lives.
 
@@ -28,9 +31,9 @@ You'll usually ask Claude Code to run these for you. Know what each one does, so
 
 ## How they fit together
 
-1. **Clone** once, to get the repo:
+1. **Clone** once, to get the repo. In this series you clone your own copy (a fork; see below):
    ```
-   gh repo clone fueled-io/os-claude-advanced-training
+   gh repo fork fueled-io/os-claude-advanced-training --clone
    cd os-claude-advanced-training
    ```
 2. **Pull** at the start of a work session, to get what's new: `git pull`
@@ -40,7 +43,7 @@ You'll usually ask Claude Code to run these for you. Know what each one does, so
    - `git status` lists what changed. Check that nothing from `raw/` is there.
    - `git add CLAUDE.md` picks which files go in the snapshot.
    - `git commit -m "Describe my monthly report workflow"` saves it with a note.
-6. **Push** to send it to GitHub. The first time you push a new branch, name it: `git push -u origin alex-kim` (your branch name in place of `alex-kim`). After that, plain `git push` works.
+6. **Push** to send it to GitHub (your fork). The first time you push a new branch, name it: `git push -u origin alex-kim` (your branch name in place of `alex-kim`). After that, plain `git push` works.
 
 A commit only exists on your computer until you push it.
 
@@ -56,6 +59,18 @@ A **branch** is a separate line of work inside the same repo. Changes on your br
 | Push a new branch to GitHub the first time | `git push -u origin alex-kim` |
 
 In this series, everyone works on a branch named after themselves: first and last name, lowercase, joined with a dash. `alex-kim` is an example; use your own name.
+
+## Forks and pull requests
+
+This repo is public, and only Sean can change it. So you work on a **fork**: your own copy of the repo on GitHub, under your username. It's public too.
+
+| To do this | Command |
+|---|---|
+| Make your fork and download it (once) | `gh repo fork fueled-io/os-claude-advanced-training --clone` |
+| Ask Sean to review your branch (once) | `gh pr create` |
+| Get someone else's pull request onto your computer | `gh pr checkout 12` (their pull request number) |
+
+A **pull request** asks the owner of a repo to look at the changes on your branch. You open it once; each later push adds to it. Participants' pull requests are for review and aren't merged. See [`CONTRIBUTING.md`](../CONTRIBUTING.md) for what may go in one.
 
 ## Going deeper
 

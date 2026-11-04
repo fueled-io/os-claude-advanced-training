@@ -10,15 +10,17 @@ It's also the best spec you can give anyone: "make *this* from *that*" beats any
 
 ## How to make one
 
-1. Pick a past run you've checked by hand and trust. A small one is fine. It just has to cover the normal cases.
-2. Keep the input. If it's raw data that can't go on GitHub, write down exactly where a teammate can get the same file (system, report name, filters, date range).
-3. Keep the output exactly as it should be.
+This repo is public, so the golden example is **made-up data**: same columns, same format, same kinds of mess as the real thing, but invented names, IDs, and amounts. Nothing in it may come from a real client or a real report.
+
+1. Make a small input that covers the normal cases: a dozen rows is plenty. Ask Claude Code to invent one in the same format as your real input, or copy a real one and replace every name, ID, email, and amount. Include the awkward cases your workflow handles (a duplicate, a blank, a refund).
+2. Run the workflow on it, and check the output by hand. This is the known correct output.
+3. Put both in `golden/`. `.gitignore` lets spreadsheets and CSVs there be committed, so read the diff: if anything real slipped in, stop.
 4. Write down what has to match exactly (the totals, the row count, the columns) and what's allowed to differ (a timestamp in the filename).
-5. Fill in [`templates/golden-example-README.template.md`](../templates/golden-example-README.template.md) and commit it with the output.
+5. Fill in [`templates/golden-example-README.template.md`](../templates/golden-example-README.template.md) as `golden/README.md` and commit it with the two files.
 
 ## Running it
 
-1. Put the golden input in `raw/`.
+1. Copy the golden input from `golden/` into `raw/`.
 2. Ask Claude to run `WORKFLOW.md` one step at a time.
 3. Compare the result with the golden output, on the things that must match.
 
@@ -30,7 +32,7 @@ Run it after you change any step, and before you hand the workflow to someone.
 
 The real check is whether **someone else** can get the same answer.
 
-1. A teammate clones your repo (or switches to your branch) with no help from you.
+1. A teammate gets your work (`gh pr checkout` with your pull request number) with no help from you.
 2. They follow your README and CLAUDE.md, get the golden input, and run the workflow.
 3. They compare with the golden output.
 4. They write down every question they had to ask, and every place they had to guess.

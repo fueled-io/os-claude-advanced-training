@@ -6,7 +6,7 @@
 
 ## Preface (5 minutes)
 
-Jessica Wallen introduces our AI acceptable use policy. It decides what you may give Claude to read, including the files you'll put in `raw/` from Session 2 on.
+Jessica Wallen introduces our AI acceptable use policy (link coming). It decides what you may give Claude to read, including the files you'll put in `raw/` from Session 2 on.
 
 ## Teaching (25 minutes)
 
@@ -18,14 +18,14 @@ Jessica Wallen introduces our AI acceptable use policy. It decides what you may 
 
 ## Hands-on (30 minutes)
 
-Create a GitHub account, install Git and the GitHub CLI (`gh`), run `gh auth login`, and get write access to this repo. Everyone leaves authenticated so Session 2 starts on the work, not on setup.
+Create a GitHub account, install Git and the GitHub CLI (`gh`), run `gh auth login`, and check you can reach this repo. Everyone leaves authenticated so Session 2 starts on the work, not on setup.
 
-Participants can't open this repo until the end of the hands-on, so they get the checklist and install guide before the session. Facilitator prep: [`checklists/facilitator.md`](../../checklists/facilitator.md).
+This repo is public, so participants can open the checklist and install guide before the session. Facilitator prep: [`checklists/facilitator.md`](../../checklists/facilitator.md).
 
 Step by step: [`exercise.md`](exercise.md).
 
 ## Assignment
 
-Install Claude Code and Claude Desktop. Confirm `gh auth status` succeeds.
+Install Claude Code and Claude Desktop. Confirm `gh auth status` succeeds. Read [`CONTRIBUTING.md`](../../CONTRIBUTING.md): this repo is public.
 
 Details: [`assignment.md`](assignment.md).

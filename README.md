@@ -10,17 +10,19 @@ Anyone at Opensend who isn't an engineer and wants their work with Claude to be 
 
 A **repo** (short for repository) is a project folder that remembers every version of its files, shows what changed, and can be handed to someone else. This one holds everything for the series: the agenda, the slides, each session's exercise and assignment, reference docs, and templates you'll copy for your own workflow.
 
-By the end of the series you'll have your own workflow in this repo, on your own branch, that a teammate can run and get the same result.
+By the end of the series you'll have your own workflow in your copy of this repo, on your own branch, that a teammate can run and get the same result.
 
-## Getting access
+## This repo is public
 
-This repo is private to `fueled-io`, Opensend's GitHub organization. You get access at the end of Session 1, when you send Sean Larkin your GitHub username and accept the invitation. Until then, Sean sends you the Session 1 checklist directly.
+Anyone can read it, so you can start with the table of contents below on github.com without installing anything.
 
-Once you have access, you can read everything here on github.com without installing anything: click any file in the table of contents below. Session 2 starts by downloading (cloning) the repo onto your computer.
+It also means **anything you push is public**: your copy of the repo, your branch, your pull request, and every commit message. Before your first commit, read [`CONTRIBUTING.md`](CONTRIBUTING.md). The short version: no client or customer details, no real business numbers, no personal information, no passwords or keys, no internal links. Raw inputs, derived files, and real results stay on your computer.
 
-## How to clone it
+Only Sean Larkin can change this repo. You work on your own copy, called a **fork**, and send your work back as a **pull request** that Sean reviews.
 
-Do this in Session 2, after Session 1's setup: a GitHub account, Git and the GitHub CLI installed, `gh auth login` done, and write access to this repo. The Session 2 hands-on ([`sessions/02/exercise.md`](sessions/02/exercise.md)) walks through the same steps with a check for each.
+## How to get your copy
+
+Do this in Session 2, after Session 1's setup: a GitHub account, Git and the GitHub CLI installed, and `gh auth login` done. The Session 2 hands-on ([`sessions/02/exercise.md`](sessions/02/exercise.md)) walks through the same steps with a check for each.
 
 1. **Open a terminal.** A terminal is a window where you type commands instead of clicking.
    - **Mac:** press `Cmd + Space`, type `Terminal`, press `Return`.
@@ -29,10 +31,10 @@ Do this in Session 2, after Session 1's setup: a GitHub account, Git and the Git
 2. **Type this, then press Enter:**
 
    ```
-   gh repo clone fueled-io/os-claude-advanced-training
+   gh repo fork fueled-io/os-claude-advanced-training --clone
    ```
 
-   This downloads the repo into a new folder called `os-claude-advanced-training` in your home folder. You'll see a few lines about "Cloning into…" and then your cursor comes back.
+   This makes your fork on GitHub (`github.com/your-username/os-claude-advanced-training`) and downloads it into a new folder called `os-claude-advanced-training` in your home folder. You'll see a few lines about the fork and "Cloning into…", and then your cursor comes back.
 
 3. **Go into the folder:**
 
@@ -48,7 +50,7 @@ Do this in Session 2, after Session 1's setup: a GitHub account, Git and the Git
    git switch -c alex-kim
    ```
 
-   Use your own name. All your work goes on this branch, so it never lands on anyone else's.
+   Use your own name. All your work goes on this branch.
 
 5. **Open it with Claude Code.** Either:
    - type `claude` and press Enter, or
@@ -56,7 +58,7 @@ Do this in Session 2, after Session 1's setup: a GitHub account, Git and the Git
 
 ## Coming back to it later
 
-You only clone once. Every time after that:
+You only fork and download once. Every time after that:
 
 1. Open a terminal.
 2. Type `cd os-claude-advanced-training` and press Enter.
@@ -73,10 +75,10 @@ To see the repo's folders in Finder or File Explorer, type `open .` (Mac) or `ex
 | `command not found: brew` (Mac) | Homebrew's "Next steps" commands weren't run. See step 4 of [`docs/install-github-cli.md`](docs/install-github-cli.md). |
 | `command not found: claude` or `'claude' is not recognized` | See step 3 of [`docs/install-claude-code.md`](docs/install-claude-code.md). |
 | `Claude Code access has not been granted for this account` | Your Opensend Claude seat doesn't include Claude Code yet. Tell Sean Larkin. |
-| `Could not resolve to a Repository` or `not found` | Your GitHub account doesn't have access yet. Make sure you accepted the invitation (Session 1, step 8). |
 | `destination path 'os-claude-advanced-training' already exists` | You already cloned it. Skip to `cd os-claude-advanced-training`. |
 | `You are not logged into any GitHub hosts` | Run `gh auth login` again. |
-| `permission denied` or `403` when pushing | Your account can read the repo but not save to it. Tell Sean Larkin: you need write access. |
+| `permission denied` or `403` when pushing | You're pushing to Opensend's repo instead of your fork, probably because you used `gh repo clone`. Inside the folder, run `gh repo fork --remote`: it makes your fork and points your pushes at it. Then push again. |
+| `GH013: Repository rule violations` or `Push cannot contain secrets` | GitHub found something that looks like a password or key in your commit and blocked the push. Don't work around it. Tell Sean Larkin. |
 
 ## Table of contents
 
@@ -96,6 +98,7 @@ To see the repo's folders in Finder or File Explorer, type `open .` (Mac) or `ex
 
 **Checklists**
 
+- [`CONTRIBUTING.md`](CONTRIBUTING.md): what may and may never be committed. Read it before your first commit
 - [`checklists/pre-send.md`](checklists/pre-send.md): run this before you send anything Claude helped you make
 - [`checklists/facilitator.md`](checklists/facilitator.md): what Sean sets up outside the sessions
 
@@ -123,11 +126,12 @@ To see the repo's folders in Finder or File Explorer, type `open .` (Mac) or `ex
 | Folder | What goes there | On GitHub? |
 |---|---|---|
 | `raw/` | Inputs exactly as they arrived: exports, PDFs, spreadsheets | **Never.** They stay off GitHub (but Claude still reads them, so follow the AI acceptable use policy) |
-| `derived/` | Files your workflow's steps make from the raw inputs | Only if your workflow says so |
-| `outputs/history/` | Finished results, one new file per run | Yes, and never overwritten |
+| `derived/` | Files your workflow's steps make from the raw inputs | **Never.** They hold real data |
+| `outputs/history/` | Finished results, one new file per run, never overwritten | **Never** in this public repo. They stay on your computer |
+| `golden/` | Your golden example: a made-up input and its correct output | Yes. Made-up data only |
 
 ## Ground rules
 
-[`CLAUDE.md`](CLAUDE.md) holds the instructions Claude follows in this repo. The three that matter most: never commit anything in `raw/`, never overwrite anything in `outputs/history/`, and always show a diff before changing a file.
+[`CLAUDE.md`](CLAUDE.md) holds the instructions Claude follows in this repo. The ones that matter most: never commit real data or anything sensitive, never overwrite anything in `outputs/history/`, and always show a diff before changing a file.
 
 Questions about the series: message Sean Larkin on Slack.

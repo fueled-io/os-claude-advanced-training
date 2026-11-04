@@ -31,7 +31,7 @@ Claude Code reads CLAUDE.md automatically at the start of every session in that 
 | What this repo is for | ✓ (for a person deciding whether to use it) | ✓ (one line, so Claude has the purpose) |
 | How to install and clone | ✓ | |
 | Who the audience is, and how to talk to them | | ✓ |
-| The rules: never commit `raw/`, never overwrite history, show diffs | (mention them) | ✓ (word for word) |
+| The rules: never commit real data or anything sensitive, never overwrite history, show diffs | (mention them) | ✓ (word for word) |
 | Where inputs and outputs live | ✓ | ✓ |
 | Who to ask for help | ✓ | |
 

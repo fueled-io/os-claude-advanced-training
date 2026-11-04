@@ -1,6 +1,15 @@
+# This repo is public. See CONTRIBUTING.md for what may be committed.
+
 # Raw inputs never leave this computer. Keep the folder itself (via .gitkeep).
 raw/*
 !raw/.gitkeep
+
+# Derived files and real results hold real data, so in this public repo they
+# stay on your computer too. The folders themselves stay (via .gitkeep).
+derived/*
+!derived/.gitkeep
+outputs/history/*
+!outputs/history/.gitkeep
 
 # Common export formats: these are usually raw data, so they stay local
 # wherever they turn up in the repo.
@@ -13,9 +22,13 @@ raw/*
 *-export.json
 exports/
 
-# Exception: finished results in outputs/history/ are committed on purpose
-# (Session 3), even when they are spreadsheets or PDFs.
-!outputs/history/**
+# Exception: the golden example is made-up data and is committed on purpose
+# (Session 4), even when it is a spreadsheet or CSV.
+!golden/**
+
+# Secrets
+.env
+.env.*
 
 # Computer clutter
 .DS_Store

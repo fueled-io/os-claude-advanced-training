@@ -50,21 +50,26 @@ The numbered steps are in `WORKFLOW.md`, one file per step in `steps/`. Run them
 
 <!-- Leave this section as it is until Session 4, when you make the golden example. -->
 
-Run the golden example in `[golden example folder]`. Its README says what the correct output is.
+Run the golden example in `golden/`. Its README says what the correct output is.
 
 ## Where things live
 
 | Folder | What goes there | Committed to GitHub? |
 |---|---|---|
 | `raw/` | Inputs exactly as they arrived: exports, PDFs, spreadsheets | Never |
-| `derived/` | Files the workflow steps create from the raw inputs and can recreate any time | Only if the workflow says so |
-| `outputs/history/` | Finished results, one file per run, kept forever | Yes, and never overwritten |
+| `derived/` | Files the workflow steps create from the raw inputs and can recreate any time | Never: they hold real data |
+| `outputs/history/` | Finished results, one file per run, kept forever | Never in this public repo. Kept on this computer, never overwritten |
+| `golden/` | The golden example: a made-up input and its correct output | Yes. Made-up data only |
 | `templates/` | Starting points for CLAUDE.md, steps, and the golden example | Yes |
 | `docs/` | Short reference docs for the series | Yes |
 
 ## Rules you must always follow
 
-1. **Never commit anything under `raw/`.** Before every commit, run `git status` and make sure no file under `raw/` is staged.
-2. **Never overwrite anything under `outputs/history/`.** Each run writes a new file with the date in its name. If a step would write over an existing file there, stop and ask.
-3. **Always show a diff before applying a change,** and wait for a yes.
-4. [Any rule specific to this workflow. For example: "Revenue figures are in USD and rounded to whole dollars." Delete this line if there are none.]
+<!-- Keep rules 1 to 5 word for word. This repo is public. -->
+
+1. **Never commit anything under `raw/`, `derived/`, or `outputs/history/`.** Before every commit, run `git status` and make sure no file from those folders is staged.
+2. **Check every commit for sensitive content.** This repo is public. Read the staged diff, the commit message, and any pull request text for anything on the "Never commit" list in `CONTRIBUTING.md`: client or customer names and details, real business numbers, personal information, passwords, API keys, tokens, internal links, screenshots. If you find any, stop, show me the lines, and suggest a made-up replacement.
+3. **Never overwrite anything under `outputs/history/`.** Each run writes a new file with the date in its name. If a step would write over an existing file there, stop and ask.
+4. **Always show a diff before applying a change,** and wait for a yes.
+5. **Never push to `fueled-io/os-claude-advanced-training` directly.** Push my branch to my fork, and open a pull request.
+6. [Any rule specific to this workflow. For example: "Revenue figures are in USD and rounded to whole dollars." Delete this line if there are none.]

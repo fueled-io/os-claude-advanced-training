@@ -1,20 +1,25 @@
 # Facilitator checklist (for Sean)
 
-Things that have to happen outside the sessions, or participants get stuck. Checked against the fueled-io organization's settings on 2026-11-03: members get **read** access to repos by default, and the organization does **not** require two-factor authentication.
+Things that happen outside the sessions.
 
-## A week before Session 1
+## How the repo is set up (2026-11-04)
 
-- [ ] **Send the Session 1 material outside the repo.** The repo is private, so participants can't open it until the end of Session 1. Send each participant [`sessions/01/exercise.md`](../sessions/01/exercise.md) and [`docs/install-github-cli.md`](../docs/install-github-cli.md), pasted into an email or Slack message or exported as PDFs.
-- [ ] **Check admin rights with IT.** Installing Git, Homebrew (Mac) and the GitHub CLI asks for an administrator password. Find out which participants' laptops are managed and don't give them one, and have IT install Git and the GitHub CLI for them before Session 1.
+- **Public.** Anyone can read it, so participants don't need an invitation. They fork it in Session 2 and send their work back as a pull request.
+- **Only Sean changes `main`.** `main` changes only through a pull request with an approving review. Force pushes and deleting `main` are blocked. Repo admins can merge their own pull requests without a second reviewer, but still only through a pull request.
+- **Every pull request asks Sean to review** ([`.github/CODEOWNERS`](../.github/CODEOWNERS)), and the pull request template carries the "nothing sensitive" checklist from [`CONTRIBUTING.md`](../CONTRIBUTING.md).
+- **GitHub secret scanning and push protection are on.** A push that contains a recognizable password or API key is blocked.
+- The other fueled-io organization owners also have admin rights on this repo. GitHub doesn't let a repo take that away from an organization owner.
+
+## Before Session 1
+
+- [ ] **Add the AI acceptable use policy link** to [`sessions/01/agenda.md`](../sessions/01/agenda.md) when it's ready. It says "(link coming)" until then.
 - [ ] **Suggest Mac users run `xcode-select --install` the day before.** It downloads Apple's command line tools, which can take a large part of a 30-minute hands-on.
-- [ ] **Add the link to the AI acceptable use policy** to [`sessions/01/agenda.md`](../sessions/01/agenda.md), so participants can find it after Jessica Wallen's preface.
 
-## During and after Session 1
+## From Session 2 on
 
-- [ ] **Create a team with Write access to this repo.** In the fueled-io organization, make a team (for example `claude-training`) and give it the **Write** role on `os-claude-advanced-training`. The organization default is read, and read isn't enough to push a branch in Session 2.
-- [ ] **Invite each participant into that team** as their GitHub username arrives. Invitations expire after 7 days; resend any that lapse.
-- [ ] **Check every participant's access before Session 2.** Each one runs `gh repo view fueled-io/os-claude-advanced-training --json viewerPermission` (Session 1 hands-on, step 8). It should say `WRITE`.
+- [ ] **Review participants' pull requests.** Each participant opens one pull request in Session 2, and every later push adds to it. Review there; don't merge them. Check each one against the "Never commit" list in [`CONTRIBUTING.md`](../CONTRIBUTING.md).
+- [ ] **If something sensitive is pushed,** have the participant rotate any password or key first. Deleting it in a new commit doesn't remove it from the history, their fork, or the pull request.
 
-## Before Session 2
+## Claude Code seats
 
-- [ ] **Confirm every participant's Claude seat includes Claude Code.** On an Enterprise plan, an organization Owner grants Claude Code access through roles. A participant without it sees `Claude Code access has not been granted for this account` when they sign in from Claude Code (see [Anthropic's troubleshooting page](https://code.claude.com/docs/en/troubleshoot-install)).
+Claude Code is included with every Team plan seat. On Enterprise, it's included with the single Enterprise seat on new and self-serve plans; older Enterprise plans include it only on Chat + Claude Code seats and Premium seats ([Anthropic: Use Claude Code with your Team or Enterprise plan](https://support.claude.com/en/articles/11845131-use-claude-code-with-your-team-or-enterprise-plan), checked 2026-11-04). A participant without it sees `Claude Code access has not been granted for this account` when they sign in.

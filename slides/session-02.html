@@ -21,8 +21,8 @@
     <span class="eyebrow">Today</span>
     <h2 class="title">Sixty minutes</h2>
     <table class="agenda"><tbody>
-      <tr><td class="t">30 min</td><td>The five verbs · README and CLAUDE.md · memories, context, skills · Code vs. Chat/Cowork · .gitignore · why the repo is the source of truth</td></tr>
-      <tr><td class="t">30 min</td><td>Hands-on: clone the starter repo, write a CLAUDE.md, read a diff</td></tr>
+      <tr><td class="t">30 min</td><td>The five verbs · README and CLAUDE.md · memories, context, skills · Code vs. Chat/Cowork · .gitignore · a public repo · why the repo is the source of truth</td></tr>
+      <tr><td class="t">30 min</td><td>Hands-on: fork the starter repo, write a CLAUDE.md, read a diff, open a pull request</td></tr>
     </tbody></table>
     <div class="slide-foot"><span>Session 2 · GitHub as your backend</span><span>Agenda</span></div>
   </section>
@@ -50,7 +50,8 @@
     <ul class="points">
       <li>A <strong>branch</strong> is a separate line of work inside the same repo</li>
       <li>Make one: <code>git switch -c alex-kim</code> · move between them: <code>git switch alex-kim</code></li>
-      <li>In this series, <strong>everyone works on their own branch</strong>, named after themselves, so nobody's changes land on anyone else's</li>
+      <li>In this series, <strong>everyone works on their own branch</strong>, named after themselves, in their own <strong>fork</strong>: a copy of the repo on GitHub under their username</li>
+      <li>A <strong>pull request</strong> asks Sean to review your branch. Open it once; every push adds to it</li>
     </ul>
     <div class="slide-foot"><span>Session 2 · GitHub as your backend</span><span>Teaching</span></div>
   </section>
@@ -132,6 +133,19 @@
   </section>
 
   <section class="slide">
+    <span class="eyebrow">This repo is public</span>
+    <h2 class="title">Anything you push, anyone can read</h2>
+    <ul class="points">
+      <li><strong>Never:</strong> client or customer details, real business numbers, personal information, passwords or keys, internal links or screenshots</li>
+      <li><strong>Stays on your computer:</strong> <code>raw/</code>, <code>derived/</code>, <code>outputs/history/</code></li>
+      <li><strong>Need an example?</strong> Make one up: "Client A", "$12,345"</li>
+    </ul>
+    <p class="ask">Deleting it later doesn't unpublish it. Not sure? Don't commit it.</p>
+    <p class="fine">The full list: CONTRIBUTING.md</p>
+    <div class="slide-foot"><span>Session 2 · GitHub as your backend</span><span>Teaching</span></div>
+  </section>
+
+  <section class="slide">
     <span class="eyebrow">Why Artifacts and Projects aren't the source of truth</span>
     <h2 class="title">Deploy there. Keep it here.</h2>
     <ul class="points">
@@ -147,12 +161,12 @@
     <span class="eyebrow">Hands-on · 30 minutes</span>
     <h2 class="title">Your first repo change</h2>
     <ol class="steps">
-      <li><strong>Clone:</strong> <code>gh repo clone fueled-io/os-claude-advanced-training</code></li>
+      <li><strong>Fork and download:</strong> <code>gh repo fork fueled-io/os-claude-advanced-training --clone</code></li>
       <li><strong>Go in, make your branch:</strong> <code>cd os-claude-advanced-training</code> · <code>git switch -c alex-kim</code>, with your own name</li>
       <li><strong>Start Claude Code:</strong> <code>claude</code></li>
       <li><strong>Write a CLAUDE.md</strong> for one real workflow from <code>templates/CLAUDE.template.md</code></li>
       <li><strong>Have Claude make a change.</strong> Read the diff, then choose plain <strong>Yes</strong>, never "allow all edits"</li>
-      <li><strong>Commit and push</strong> your branch. Nothing from <code>raw/</code></li>
+      <li><strong>Commit, push, open a pull request.</strong> Nothing from <code>raw/</code>, nothing sensitive</li>
     </ol>
     <p class="fine">Checklist with "done when" for every step: sessions/02/exercise.md</p>
     <div class="slide-foot"><span>Session 2 · GitHub as your backend</span><span>Hands-on</span></div>
@@ -164,8 +178,8 @@
     <p class="lede">Move one recurring workflow or daily task into the repo.</p>
     <ul class="points">
       <li>Its inputs go in <code>raw/</code>, off GitHub. Only files the AI policy allows</li>
-      <li>How you do it today goes in your CLAUDE.md. Messy is fine</li>
-      <li>Commit and push your branch</li>
+      <li>How you do it today goes in your CLAUDE.md. Messy is fine; no client names or real numbers</li>
+      <li>Commit and push your branch. Your pull request picks it up</li>
     </ul>
     <p class="fine">Details: sessions/02/assignment.md</p>
     <div class="slide-foot"><span>Session 2 · GitHub as your backend</span><span>Assignment</span></div>

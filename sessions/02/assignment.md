@@ -11,7 +11,7 @@ Finish before Session 3. Work on your own branch (the one you made in the hands-
    *Done when* the files are in `raw/` and `git status` does not list them.
 2. [ ] **Write down how you do it today.** Ask Claude Code to fill in the "How it's done today" section of your CLAUDE.md, in your own words. Messy is fine. Session 3 turns it into steps.
    *Done when* someone reading your CLAUDE.md could tell what you do, in what order, and what you hand over at the end.
-3. [ ] **Commit and push.** Ask Claude Code: "Commit these changes and push my branch." Read the diff, and check nothing from `raw/` is in the commit.
-   *Done when* the change shows on your branch on GitHub.
+3. [ ] **Commit and push.** Ask Claude Code: "Commit these changes and push my branch." Read the diff, and check nothing from `raw/` or the "Never commit" list in [`CONTRIBUTING.md`](../../CONTRIBUTING.md) is in the commit. Write "how it's done today" without client names or real numbers.
+   *Done when* the change shows in your pull request on GitHub.
 
 Bring the workflow to Session 3. That's what you'll break into steps.

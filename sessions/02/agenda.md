@@ -11,11 +11,12 @@
 - **Memories vs. context vs. skills,** and where CLAUDE.md fits. Reference: [`docs/memory-context-skills.md`](../../docs/memory-context-skills.md).
 - **Claude Code vs. Claude Chat/Cowork:** which one for which job. Reference: [`docs/code-vs-chat.md`](../../docs/code-vs-chat.md).
 - **.gitignore for raw inputs:** exports, PDFs, and customer data stay off GitHub. See this repo's [`.gitignore`](../../.gitignore). `.gitignore` doesn't keep them from Claude: anything Claude Code reads goes to Anthropic, so the AI acceptable use policy decides what belongs in `raw/`.
+- **This repo is public:** you work on your own copy (a fork) and send your work back as a pull request, which Sean reviews. Client details, real numbers, personal information, and passwords never go in it. Reference: [`CONTRIBUTING.md`](../../CONTRIBUTING.md).
 - **Why Artifacts and Projects aren't the source of truth:** no version history, no diff, no merge, owner-only editing on skills, and instructions drift between accounts. Projects and skills are where you deploy a procedure; the repo is where it lives.
 
 ## Hands-on (30 minutes)
 
-Clone the starter repo, write a CLAUDE.md for one real workflow, have Claude Code make a change, and read the diff before accepting it.
+Fork the starter repo, write a CLAUDE.md for one real workflow, have Claude Code make a change, read the diff before accepting it, and open a pull request.
 
 Step by step: [`exercise.md`](exercise.md).
 

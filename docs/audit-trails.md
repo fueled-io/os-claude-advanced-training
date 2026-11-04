@@ -35,8 +35,9 @@ The counts and totals before and after are the most useful lines: anyone can che
 
 ## Where it lives
 
-- Write it alongside the output, as a dated file: `outputs/history/2026-10-audit.md`, next to `2026-10-revenue-summary.xlsx`. It's committed and never overwritten, like the output.
-- If the list of changed rows contains customer data, keep that list out of GitHub (in `derived/`, as a `.csv`, which `.gitignore` ignores). The audit file just says how many and where to find them.
+- Write it alongside the output, as a dated file: `outputs/history/2026-10-audit.md`, next to `2026-10-revenue-summary.xlsx`. It's never overwritten, like the output.
+- It holds real counts and totals, so in this public repo it stays on your computer, like everything in `outputs/history/`. In a private work repo you'd commit it with the output.
+- Keep the list of changed rows in `derived/`. The audit file just says how many and where to find them.
 
 ## Ask Claude to write it as it goes
 

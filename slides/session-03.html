@@ -81,8 +81,8 @@
       <thead><tr><th>Kind</th><th>What it is</th><th>Lives in</th><th>Committed?</th></tr></thead>
       <tbody>
         <tr><td><span class="pill">raw</span></td><td>An input, exactly as it arrived</td><td><code>raw/</code></td><td>Never</td></tr>
-        <tr><td><span class="pill go">derived</span></td><td>Made by a step, regenerated any time</td><td><code>derived/</code></td><td>Only if the workflow says so</td></tr>
-        <tr><td><span class="pill new">historical</span></td><td>A finished result</td><td><code>outputs/history/</code></td><td>Yes, and never overwritten by a re-run</td></tr>
+        <tr><td><span class="pill go">derived</span></td><td>Made by a step, regenerated any time</td><td><code>derived/</code></td><td>Not in this public repo</td></tr>
+        <tr><td><span class="pill new">historical</span></td><td>A finished result, never overwritten by a re-run</td><td><code>outputs/history/</code></td><td>Not in this public repo. In a private work repo, yes</td></tr>
       </tbody>
     </table>
     <p class="fine">Reference: docs/file-types.md</p>
@@ -116,7 +116,7 @@
       <li><strong>Give every step a done-check</strong> you can verify by looking</li>
       <li><strong>Write the files:</strong> <code>WORKFLOW.md</code> and one file per step in <code>steps/</code></li>
       <li><strong>Label every file</strong> raw, derived, or historical</li>
-      <li><strong>Raw files out of GitHub:</strong> in <code>raw/</code> or in <code>.gitignore</code></li>
+      <li><strong>Real data out of GitHub:</strong> in <code>raw/</code> or in <code>.gitignore</code></li>
       <li><strong>Commit and push</strong></li>
     </ol>
     <p class="fine">Checklist with "done when" for every step: sessions/03/exercise.md</p>
@@ -126,11 +126,11 @@
   <section class="slide band">
     <span class="eyebrow">Before Session 4</span>
     <h2 class="title">Assignment</h2>
-    <p class="lede">Run the workflow end to end from the repo and commit the outputs.</p>
+    <p class="lede">Run the workflow end to end from the repo and keep the outputs.</p>
     <ul class="points">
       <li>One step at a time, checking each done-check</li>
       <li>An audit trail for every step that changes data</li>
-      <li>The result goes in <code>outputs/history/</code> as a new file</li>
+      <li>The result goes in <code>outputs/history/</code> as a new file, on your computer</li>
     </ul>
     <p class="fine">Details: sessions/03/assignment.md</p>
     <div class="slide-foot"><span>Session 3 · Break the work into steps</span><span>Assignment</span></div>
