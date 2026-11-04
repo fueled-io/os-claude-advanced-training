@@ -10,7 +10,7 @@
 <!-- Source of truth: AGENDA.md and sessions/01/. Change those first, then this deck. -->
 <main class="deck">
 
-  <section class="slide band">
+  <section class="slide band cover">
     <span class="eyebrow">We're All Software Developers Now · Session 1 of 4</span>
     <h1 class="hero">Don't ship slop.</h1>
     <p class="lede">Producing output with Claude is nearly free, so the scarce skill is judgment about what's worth producing and verifying that it's right.</p>
@@ -55,33 +55,33 @@
     <div class="slide-foot"><span>Session 1 · Don't ship slop.</span><span>Teaching</span></div>
   </section>
 
-  <section class="slide top">
+  <section class="slide">
     <span class="eyebrow">What a slop grenade costs</span>
     <h2 class="title">You save 30 minutes. Every reader pays 30.</h2>
-    <div class="ledger" role="img" aria-label="Skipping review saves the sender 30 minutes. Each reader spends 30 minutes reviewing: 30 minutes for 1 reader, 90 for 3, 300 for a team of 10.">
-      <div class="row saved">
+    <div class="cost" role="img" aria-label="Skipping review saves the sender 30 minutes. Each reader spends 30 minutes reviewing: 30 minutes for 1 reader, 90 for 3 readers, 300 for a team of 10.">
+      <div class="cost-row saved">
         <span class="who">You skip the review</span>
-        <span class="blocks"><i class="b save">30</i></span>
-        <span class="sum"><span><strong>30 min</strong> saved</span></span>
+        <span class="track"><span class="bar" style="--m:30"></span><span class="val">30 min saved</span></span>
+        <span class="x"></span>
       </div>
-      <div class="row">
+      <div class="cost-row">
         <span class="who">1 reader</span>
-        <span class="blocks"><i class="b">30</i></span>
-        <span class="sum"><span><strong>30 min</strong> · you broke even</span></span>
+        <span class="track"><span class="bar" style="--m:30"></span><span class="val">30 min</span></span>
+        <span class="x">1×</span>
       </div>
-      <div class="row">
+      <div class="cost-row">
         <span class="who">3 readers</span>
-        <span class="blocks"><i class="b">30</i><i class="b">30</i><i class="b">30</i></span>
-        <span class="sum"><span><strong>90 min</strong> · 3× what you saved</span></span>
+        <span class="track"><span class="bar" style="--m:90"></span><span class="val">90 min</span></span>
+        <span class="x">3×</span>
       </div>
-      <div class="row">
+      <div class="cost-row">
         <span class="who">A team of 10</span>
-        <span class="blocks"><i class="b">30</i><i class="b">30</i><i class="b">30</i><i class="b">30</i><i class="b">30</i><i class="b">30</i><i class="b">30</i><i class="b">30</i><i class="b">30</i><i class="b">30</i></span>
-        <span class="sum"><span><strong>300 min</strong> · 10× what you saved</span></span>
+        <span class="track"><span class="bar" style="--m:300"></span><span class="val">300 min</span></span>
+        <span class="x">10×</span>
       </div>
     </div>
-    <p class="ask">Claude should save your reader time, not add to it. Review it once, so they don't each have to.</p>
-    <p class="fine">Each block is 30 minutes. An illustration, not a measurement.</p>
+    <p class="ask">Claude should save your reader time, not add to it.</p>
+    <p class="fine">Each segment is 30 minutes of someone's time · an illustration, not a measurement</p>
     <div class="slide-foot"><span>Session 1 · Don't ship slop.</span><span>Teaching</span></div>
   </section>
 

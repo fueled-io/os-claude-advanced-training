@@ -9,7 +9,7 @@
   --ground:#fafaf6; --ground-2:#f2efe3; --card:#fffdf8; --card-2:#f2efe3;
   --ink:#1c1c1c; --ink-2:#55534a; --ink-3:#7d7a6e;
   --green:#288364; --green-dark:#025939; --green-light:#059765;
-  --lime:#e5ff80; --lime-dark:#d6f066; --on-green:#f5f7ee;
+  --band:#156b4b; --lime:#e5ff80; --lime-dark:#d6f066; --on-green:#f5f7ee;
   --border:#dcd9cc; --border-soft:#ebe8dc;
   --shadow:0 1px 2px rgba(28,28,28,.05), 0 8px 28px -18px rgba(2,89,57,.28);
   --radius:14px;
@@ -43,7 +43,9 @@ code{white-space:nowrap;font-family:var(--mono);font-size:.9em;background:var(--
 }
 /* busy slides (step lists, tables) step the type down so nothing overflows */
 .slide.top,.slide.dense{font-size:calc(var(--u)*1.6)}
-.slide.band{background:var(--green-dark);color:var(--on-green);border-color:var(--green-dark)}
+/* green slides inside a deck are a step lighter than the title (cover) slide */
+.slide.band{background:var(--band);color:var(--on-green);border-color:var(--band)}
+.slide.band.cover{background:var(--green-dark);border-color:var(--green-dark)}
 .slide.band h1,.slide.band h2,.slide.band h3,.slide.band strong{color:var(--on-green)}
 .band code{background:rgba(245,247,238,.14);border-color:rgba(245,247,238,.24);color:var(--on-green)}
 .band .ask code{background:var(--card-2);border-color:var(--border-soft);color:var(--ink)}
@@ -97,18 +99,18 @@ blockquote.quote{margin:.35em 0 0;font-family:var(--display);font-weight:800;fon
 .band .cite a{color:var(--lime);text-underline-offset:.2em}
 .band .cite a:hover{color:var(--on-green)}
 
-/* ---------- cost ledger: one block per 30 minutes ---------- */
-.ledger{margin-top:1em;display:grid;grid-template-columns:auto 1fr auto;column-gap:1.1em;max-width:52em}
-.ledger .row{display:contents}
-.ledger .row > span{padding:.55em 0;border-bottom:1px solid var(--border-soft);display:flex;align-items:center}
-.ledger .row:last-child > span{border-bottom:0}
-.ledger .who{font-weight:650;color:var(--ink);white-space:nowrap}
-.ledger .blocks{gap:.25em;flex-wrap:nowrap}
-.ledger .b{font-style:normal;display:inline-flex;align-items:center;justify-content:center;width:2.7em;height:2.1em;border-radius:7px;background:var(--ink);color:var(--card);font-size:.78em;font-weight:650;font-variant-numeric:tabular-nums}
-.ledger .b.save{background:var(--lime);color:var(--ink);border:1px solid var(--lime-dark)}
-.ledger .sum{color:var(--ink-2);white-space:nowrap;justify-content:flex-end}
-.ledger .sum strong{font-size:1.15em}
-.ledger .saved .sum strong{color:var(--green-dark)}
+/* ---------- cost chart: bars to scale, one segment per 30 minutes ---------- */
+.cost{margin-top:1.1em;display:grid;grid-template-columns:auto 1fr auto;column-gap:1em;row-gap:.55em;align-items:center}
+.cost-row{display:contents}
+.cost .who{font-weight:650;color:var(--ink);white-space:nowrap;font-size:.9em}
+.cost .track{display:flex;align-items:center;gap:.5em;min-width:0}
+/* 300 minutes fills the track, leaving room for the label */
+.cost .bar{flex:none;height:1.55em;border-radius:6px;width:calc((100% - 5.2em) * var(--m) / 300);
+  background:var(--ink) repeating-linear-gradient(90deg,transparent 0 calc(100% * 30 / var(--m) - 3px),var(--card) calc(100% * 30 / var(--m) - 3px) calc(100% * 30 / var(--m)))}
+.cost .saved .bar{background:var(--lime);box-shadow:inset 0 0 0 1px var(--lime-dark)}
+.cost .val{white-space:nowrap;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
+.cost .saved .val{color:var(--green-dark)}
+.cost .x{font-family:var(--display);font-weight:800;font-size:1.5em;line-height:1;color:var(--ink);min-width:2.2em;text-align:right;font-variant-numeric:tabular-nums}
 
 /* ---------- lists ---------- */
 ul.points{list-style:none;margin:.9em 0 0;padding:0;max-width:44em}
