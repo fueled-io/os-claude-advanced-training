@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Session 2: GitHub as your backend</title>
+<link rel="stylesheet" href="deck.css">
+</head>
+<body>
+<!-- Source of truth: AGENDA.md, sessions/02/, and docs/. Change those first, then this deck. -->
+<main class="deck">
+
+  <section class="slide band">
+    <span class="eyebrow">We're All Software Developers Now · Session 2 of 4</span>
+    <h1 class="hero">GitHub as your backend</h1>
+    <p class="lede">A repo is a project folder that remembers, shows what changed, and can be handed to someone else.</p>
+    <p class="meta">60 minutes · 30 teaching · 30 hands-on</p>
+  </section>
+
+  <section class="slide">
+    <span class="eyebrow">Today</span>
+    <h2 class="title">Sixty minutes</h2>
+    <table class="agenda"><tbody>
+      <tr><td class="t">30 min</td><td>The five verbs · README and CLAUDE.md · memories, context, skills · Code vs. Chat/Cowork · .gitignore · why the repo is the source of truth</td></tr>
+      <tr><td class="t">30 min</td><td>Hands-on: clone the starter repo, write a CLAUDE.md, read a diff</td></tr>
+    </tbody></table>
+    <div class="slide-foot"><span>Session 2 · GitHub as your backend</span><span>Agenda</span></div>
+  </section>
+
+  <section class="slide dense">
+    <span class="eyebrow">The five verbs</span>
+    <h2 class="title">Everything you'll do with a repo</h2>
+    <table class="grid">
+      <thead><tr><th>Verb</th><th>Command</th><th>What it does</th></tr></thead>
+      <tbody>
+        <tr><td><strong>clone</strong></td><td><code>gh repo clone owner/repo</code></td><td>Download a copy of a repo, with its whole history, onto your computer</td></tr>
+        <tr><td><strong>diff</strong></td><td><code>git diff</code></td><td>Show exactly what changed: lines removed (−) and added (+)</td></tr>
+        <tr><td><strong>commit</strong></td><td><code>git commit -m "note"</code></td><td>Save a snapshot of your changes, with a note saying what and why</td></tr>
+        <tr><td><strong>push</strong></td><td><code>git push</code></td><td>Send your commits up to GitHub so others can see them. A new branch's first push: <code>git push -u origin alex-kim</code></td></tr>
+        <tr><td><strong>pull</strong></td><td><code>git pull</code></td><td>Bring down what others have pushed since you last looked</td></tr>
+      </tbody>
+    </table>
+    <p class="fine">Exact commands and sources: docs/git-five-verbs.md</p>
+    <div class="slide-foot"><span>Session 2 · GitHub as your backend</span><span>Teaching</span></div>
+  </section>
+
+  <section class="slide">
+    <span class="eyebrow">Branches · one slide</span>
+    <h2 class="title">Your own lane in a shared repo</h2>
+    <ul class="points">
+      <li>A <strong>branch</strong> is a separate line of work inside the same repo</li>
+      <li>Make one: <code>git switch -c alex-kim</code> · move between them: <code>git switch alex-kim</code></li>
+      <li>In this series, <strong>everyone works on their own branch</strong>, named after themselves, so nobody's changes land on anyone else's</li>
+    </ul>
+    <div class="slide-foot"><span>Session 2 · GitHub as your backend</span><span>Teaching</span></div>
+  </section>
+
+  <section class="slide">
+    <span class="eyebrow">README and CLAUDE.md</span>
+    <h2 class="title">Two files that make a repo explain itself</h2>
+    <div class="cols">
+      <div class="panel">
+        <h3>README.md · for a person</h3>
+        <ul class="points">
+          <li>What this is and who it's for</li>
+          <li>How to get it and run it</li>
+          <li>Where things are</li>
+        </ul>
+      </div>
+      <div class="panel good">
+        <h3>CLAUDE.md · for Claude</h3>
+        <ul class="points">
+          <li>Who it's talking to and how</li>
+          <li>The workflow, its inputs and outputs</li>
+          <li>The rules it must always follow</li>
+        </ul>
+      </div>
+    </div>
+    <p class="fine">More, with examples: docs/claude-md-and-readme.md</p>
+    <div class="slide-foot"><span>Session 2 · GitHub as your backend</span><span>Teaching</span></div>
+  </section>
+
+  <section class="slide dense">
+    <span class="eyebrow">Memories vs. context vs. skills</span>
+    <h2 class="title">What Claude knows, and for how long</h2>
+    <table class="grid">
+      <thead><tr><th>Thing</th><th>What it is</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Context</strong></td><td>Everything Claude can see right now, in this conversation. It has a size limit, and it's gone when the conversation ends.</td></tr>
+        <tr><td><strong>Memories</strong></td><td>Notes Claude carries from one conversation to the next.</td></tr>
+        <tr><td><strong>Skills</strong></td><td>Packaged instructions Claude loads when a task calls for them.</td></tr>
+        <tr><td><strong>CLAUDE.md</strong></td><td>Instructions in a file in your repo. Claude Code reads it at the start of every session, and it changes only when someone commits a change.</td></tr>
+      </tbody>
+    </table>
+    <p class="fine">Plain-language reference with sources: docs/memory-context-skills.md</p>
+    <div class="slide-foot"><span>Session 2 · GitHub as your backend</span><span>Teaching</span></div>
+  </section>
+
+  <section class="slide">
+    <span class="eyebrow">Claude Code vs. Claude Chat/Cowork</span>
+    <h2 class="title">Which one for which job</h2>
+    <div class="cols">
+      <div class="panel good">
+        <h3>Claude Code</h3>
+        <ul class="points">
+          <li>Work that lives in files, in a repo</li>
+          <li>Anything you or a teammate will run again</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>Claude Chat / Cowork</h3>
+        <ul class="points">
+          <li>Questions, drafts, thinking out loud</li>
+          <li>One-off work you won't repeat</li>
+        </ul>
+      </div>
+    </div>
+    <p class="fine">Details: docs/code-vs-chat.md</p>
+    <div class="slide-foot"><span>Session 2 · GitHub as your backend</span><span>Teaching</span></div>
+  </section>
+
+  <section class="slide">
+    <span class="eyebrow">.gitignore for raw inputs</span>
+    <h2 class="title">Some files never go to GitHub</h2>
+    <p class="copy">Exports, PDFs, and customer data stay off GitHub. <code>.gitignore</code> is the list of files git refuses to commit. This repo's says:</p>
+    <div class="callout">
+      <span class="tag">.gitignore (excerpt)</span>
+      <code>raw/*</code> · <code>*.csv</code> · <code>*.xlsx</code> · <code>*.pdf</code> · <code>*.export.json</code> · <code>exports/</code>
+    </div>
+    <p class="ask">It doesn't hide them from Claude. Anything Claude Code reads goes to Anthropic, so the AI acceptable use policy decides what goes in <code>raw/</code>.</p>
+    <div class="slide-foot"><span>Session 2 · GitHub as your backend</span><span>Teaching</span></div>
+  </section>
+
+  <section class="slide">
+    <span class="eyebrow">Why Artifacts and Projects aren't the source of truth</span>
+    <h2 class="title">Deploy there. Keep it here.</h2>
+    <ul class="points">
+      <li>No version history, no diff, no merge</li>
+      <li>Owner-only editing on skills</li>
+      <li>Instructions drift between accounts</li>
+    </ul>
+    <p class="ask">Projects and skills are where you <strong>deploy</strong> a procedure. The repo is where it <strong>lives</strong>.</p>
+    <div class="slide-foot"><span>Session 2 · GitHub as your backend</span><span>Teaching</span></div>
+  </section>
+
+  <section class="slide top">
+    <span class="eyebrow">Hands-on · 30 minutes</span>
+    <h2 class="title">Your first repo change</h2>
+    <ol class="steps">
+      <li><strong>Clone:</strong> <code>gh repo clone fueled-io/os-claude-advanced-training</code></li>
+      <li><strong>Go in, make your branch:</strong> <code>cd os-claude-advanced-training</code> · <code>git switch -c alex-kim</code>, with your own name</li>
+      <li><strong>Start Claude Code:</strong> <code>claude</code></li>
+      <li><strong>Write a CLAUDE.md</strong> for one real workflow from <code>templates/CLAUDE.template.md</code></li>
+      <li><strong>Have Claude make a change.</strong> Read the diff, then choose plain <strong>Yes</strong>, never "allow all edits"</li>
+      <li><strong>Commit and push</strong> your branch. Nothing from <code>raw/</code></li>
+    </ol>
+    <p class="fine">Checklist with "done when" for every step: sessions/02/exercise.md</p>
+    <div class="slide-foot"><span>Session 2 · GitHub as your backend</span><span>Hands-on</span></div>
+  </section>
+
+  <section class="slide band">
+    <span class="eyebrow">Before Session 3</span>
+    <h2 class="title">Assignment</h2>
+    <p class="lede">Move one recurring workflow or daily task into the repo.</p>
+    <ul class="points">
+      <li>Its inputs go in <code>raw/</code>, off GitHub. Only files the AI policy allows</li>
+      <li>How you do it today goes in your CLAUDE.md. Messy is fine</li>
+      <li>Commit and push your branch</li>
+    </ul>
+    <p class="fine">Details: sessions/02/assignment.md</p>
+    <div class="slide-foot"><span>Session 2 · GitHub as your backend</span><span>Assignment</span></div>
+  </section>
+
+</main>
+<script src="deck.js"></script>
+</body>
+</html>

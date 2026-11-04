@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Session 4: Same result, every time, for everyone</title>
+<link rel="stylesheet" href="deck.css">
+</head>
+<body>
+<!-- Source of truth: AGENDA.md, sessions/04/, and docs/. Change those first, then this deck. -->
+<main class="deck">
+
+  <section class="slide band">
+    <span class="eyebrow">We're All Software Developers Now · Session 4 of 4</span>
+    <h1 class="hero">Same result, every time, for everyone</h1>
+    <p class="lede">Predictable results come from narrowing what you ask for and writing it down.</p>
+    <p class="meta">60 minutes · 30 teaching · 30 hands-on</p>
+  </section>
+
+  <section class="slide">
+    <span class="eyebrow">Today</span>
+    <h2 class="title">Sixty minutes</h2>
+    <table class="agenda"><tbody>
+      <tr><td class="t">20 min</td><td>Procedures as files · pinned inputs and output formats · golden examples · the handoff test · the honest limits</td></tr>
+      <tr><td class="t">10 min</td><td>Two kinds of model</td></tr>
+      <tr><td class="t">30 min</td><td>Hands-on: swap repos with a partner and run their workflow</td></tr>
+    </tbody></table>
+    <div class="slide-foot"><span>Session 4 · Same result, every time</span><span>Agenda</span></div>
+  </section>
+
+  <section class="slide band">
+    <span class="eyebrow">Procedures as files</span>
+    <h2 class="title" style="font-size:2.6em">Never as memory of what worked last time.</h2>
+    <div class="slide-foot"><span>Session 4 · Same result, every time</span><span>Teaching</span></div>
+  </section>
+
+  <section class="slide">
+    <span class="eyebrow">Narrow what you ask for</span>
+    <h2 class="title">Pinned inputs, explicit output formats</h2>
+    <ul class="points">
+      <li><strong>Pinned inputs:</strong> the exact files, exports, and date ranges, written down</li>
+      <li><strong>Explicit output formats:</strong> columns, order, rounding, file name</li>
+    </ul>
+    <p class="ask">A sample output file in the repo is the best spec.</p>
+    <div class="slide-foot"><span>Session 4 · Same result, every time</span><span>Teaching</span></div>
+  </section>
+
+  <section class="slide">
+    <span class="eyebrow">Golden examples</span>
+    <h2 class="title">One known input, one known correct output</h2>
+    <p class="copy">So anyone can check the workflow still works: run it on the golden input and compare with the golden output.</p>
+    <p class="fine">Template: templates/golden-example-README.template.md · Reference: docs/golden-examples.md</p>
+    <div class="slide-foot"><span>Session 4 · Same result, every time</span><span>Teaching</span></div>
+  </section>
+
+  <section class="slide">
+    <span class="eyebrow">The handoff test</span>
+    <h2 class="title">A teammate clones the repo cold and runs it</h2>
+    <div class="callout">
+      <span class="tag">The rule</span>
+      A different answer means the repo is missing something.
+    </div>
+    <div class="slide-foot"><span>Session 4 · Same result, every time</span><span>Teaching</span></div>
+  </section>
+
+  <section class="slide quiet">
+    <span class="eyebrow">The honest limits</span>
+    <h2 class="title">Some workflows need more than claude.ai</h2>
+    <p class="copy">claude.ai can't pin model or effort per project, so some workflows need a real agent behind an API.</p>
+    <p class="ask">If yours is one of them, flag it to Sean and we'll scope it.</p>
+    <div class="slide-foot"><span>Session 4 · Same result, every time</span><span>Teaching</span></div>
+  </section>
+
+  <section class="slide">
+    <span class="eyebrow">Two kinds of model · 10 minutes</span>
+    <h2 class="title">Generative vs. decision</h2>
+    <div class="cols">
+      <div class="panel">
+        <h3>Generative models</h3>
+        <ul class="points"><li>Write and reason</li></ul>
+      </div>
+      <div class="panel good">
+        <h3>Decision models</h3>
+        <ul class="points">
+          <li>Pick from options you already know, with a calibrated probability</li>
+          <li><strong>Jev</strong> is the decision model we use</li>
+          <li>OpenAI Decisions, Clef, and Microsoft-Decision-1 are the same category</li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Session 4 · Same result, every time</span><span>Teaching</span></div>
+  </section>
+
+  <section class="slide">
+    <span class="eyebrow">Is it a decision-model question?</span>
+    <h2 class="title">If the answer is one of a few options you already know, it is.</h2>
+    <div class="callout">
+      <span class="tag">The threshold</span>
+      The confidence threshold is a policy you set, and everything below the line goes to a person.
+    </div>
+    <p class="fine">Reference: docs/decision-models.md</p>
+    <div class="slide-foot"><span>Session 4 · Same result, every time</span><span>Teaching</span></div>
+  </section>
+
+  <section class="slide top">
+    <span class="eyebrow">Hands-on · 30 minutes</span>
+    <h2 class="title">Pairs swap repos and run each other's workflow</h2>
+    <ol class="steps">
+      <li><strong>Your golden example</strong> is committed and pushed</li>
+      <li><strong>Get your partner's branch:</strong> <code>git pull</code> · <code>git switch sam-lee</code> (their name)</li>
+      <li><strong>Run it cold</strong>, without asking them. Write down every question you'd have asked</li>
+      <li><strong>Compare</strong> with their golden output</li>
+      <li><strong>Hand back the gaps</strong>, then <code>git switch alex-kim</code> (yours)</li>
+    </ol>
+    <p class="fine">Checklist with "done when" for every step: sessions/04/exercise.md</p>
+    <div class="slide-foot"><span>Session 4 · Same result, every time</span><span>Hands-on</span></div>
+  </section>
+
+  <section class="slide band">
+    <span class="eyebrow">Graduation</span>
+    <h1 class="hero" style="font-size:2.6em">Every participant has a repo someone else has successfully run.</h1>
+    <p class="fine">Fix your gaps, rerun the handoff test: sessions/04/assignment.md</p>
+  </section>
+
+</main>
+<script src="deck.js"></script>
+</body>
+</html>

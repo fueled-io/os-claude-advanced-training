@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Session 1: Don't ship slop.</title>
+<link rel="stylesheet" href="deck.css">
+</head>
+<body>
+<!-- Source of truth: AGENDA.md and sessions/01/. Change those first, then this deck. -->
+<main class="deck">
+
+  <section class="slide band">
+    <span class="eyebrow">We're All Software Developers Now · Session 1 of 4</span>
+    <h1 class="hero">Don't ship slop.</h1>
+    <p class="lede">Producing output with Claude is nearly free, so the scarce skill is judgment about what's worth producing and verifying that it's right.</p>
+    <p class="meta">60 minutes · 30 teaching · 30 hands-on</p>
+  </section>
+
+  <section class="slide">
+    <span class="eyebrow">Today</span>
+    <h2 class="title">Sixty minutes</h2>
+    <table class="agenda"><tbody>
+      <tr><td class="t">5 min</td><td>Our AI acceptable use policy, with Jessica Wallen</td></tr>
+      <tr><td class="t">25 min</td><td>What slop is, the sender's contract, the pre-send checklist, a live demo</td></tr>
+      <tr><td class="t">30 min</td><td>Hands-on: a GitHub account and the GitHub CLI, signed in</td></tr>
+    </tbody></table>
+    <div class="slide-foot"><span>Session 1 · Don't ship slop.</span><span>Agenda</span></div>
+  </section>
+
+  <section class="slide quiet">
+    <span class="eyebrow">Preface · 5 minutes</span>
+    <h2 class="title">Our AI acceptable use policy</h2>
+    <p class="copy">Jessica Wallen</p>
+    <div class="slide-foot"><span>Session 1 · Don't ship slop.</span><span>Preface</span></div>
+  </section>
+
+  <section class="slide">
+    <span class="eyebrow">What is AI slop?</span>
+    <h2 class="title">Four kinds of slop</h2>
+    <ul class="points">
+      <li><strong>Output nobody asked for</strong></li>
+      <li><strong>Claims the sender can't defend</strong></li>
+      <li><strong>Length that hides the answer</strong></li>
+      <li><strong>Work that transfers effort to the reader</strong></li>
+    </ul>
+    <div class="slide-foot"><span>Session 1 · Don't ship slop.</span><span>Teaching</span></div>
+  </section>
+
+  <section class="slide band">
+    <span class="eyebrow">The sender's contract</span>
+    <h2 class="title" style="font-size:2.6em">You own every claim in anything you send.</h2>
+    <p class="lede">Claude drafts, you sign.</p>
+    <div class="slide-foot"><span>Session 1 · Don't ship slop.</span><span>Teaching</span></div>
+  </section>
+
+  <section class="slide">
+    <span class="eyebrow">A pre-send checklist</span>
+    <h2 class="title">Three questions before you hit send</h2>
+    <ol class="steps">
+      <li><strong>Does it answer a question someone asked?</strong></li>
+      <li><strong>Could you defend every number?</strong></li>
+      <li><strong>Is it shorter than what it replaces?</strong></li>
+    </ol>
+    <p class="ask">It's a file in the starter repo: <code>checklists/pre-send.md</code></p>
+    <div class="slide-foot"><span>Session 1 · Don't ship slop.</span><span>Teaching</span></div>
+  </section>
+
+  <section class="slide">
+    <span class="eyebrow">Live demo</span>
+    <h2 class="title">The same request, two ways</h2>
+    <div class="cols">
+      <div class="panel bad">
+        <h3>Done as slop</h3>
+        <ul class="points">
+          <li>Answers a question nobody asked</li>
+          <li>Numbers with no source</li>
+          <li>Longer than what it replaces</li>
+        </ul>
+      </div>
+      <div class="panel good">
+        <h3>Done well</h3>
+        <ul class="points">
+          <li>Answers the question that was asked</li>
+          <li>Every number defensible</li>
+          <li>Shorter than what it replaces</li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Session 1 · Don't ship slop.</span><span>Demo</span></div>
+  </section>
+
+  <section class="slide band">
+    <span class="eyebrow">The mindset for the rest of the series</span>
+    <h2 class="title" style="font-size:2.6em">Work lives in files and folders, not in chat history.</h2>
+    <div class="slide-foot"><span>Session 1 · Don't ship slop.</span><span>Teaching</span></div>
+  </section>
+
+  <section class="slide top">
+    <span class="eyebrow">Hands-on · 30 minutes</span>
+    <h2 class="title">Leave signed in to GitHub</h2>
+    <ol class="steps">
+      <li><strong>Create a GitHub account</strong> at github.com/signup, with your Opensend email</li>
+      <li><strong>Open a terminal:</strong> Mac <code>Cmd + Space</code> → Terminal · Windows: <code>Windows</code> key → Terminal or PowerShell</li>
+      <li><strong>Install Git, then the GitHub CLI</strong>, following <code>docs/install-github-cli.md</code></li>
+      <li><strong>Sign in:</strong> <code>gh auth login</code> → GitHub.com · HTTPS · Yes · web browser · copy the code, press Enter</li>
+      <li><strong>Check it:</strong> <code>gh auth status</code> shows your username</li>
+      <li><strong>Tell Git who you are</strong>, then <strong>Slack your GitHub username to Sean</strong>, accept the invite, and check you have <code>WRITE</code></li>
+    </ol>
+    <p class="fine">Checklist with "done when" for every step: sessions/01/exercise.md</p>
+    <div class="slide-foot"><span>Session 1 · Don't ship slop.</span><span>Hands-on</span></div>
+  </section>
+
+  <section class="slide band">
+    <span class="eyebrow">Before Session 2</span>
+    <h2 class="title">Assignment</h2>
+    <ul class="points">
+      <li><strong>Install Claude Code and Claude Desktop:</strong> docs/install-claude-code.md</li>
+      <li><strong>Confirm <code>gh auth status</code> succeeds</strong></li>
+      <li><strong>Accept the GitHub invitation</strong> within 7 days, and check you have <code>WRITE</code> access</li>
+    </ul>
+    <p class="fine">Session 2 starts on the work, not on setup. Details: sessions/01/assignment.md</p>
+    <div class="slide-foot"><span>Session 1 · Don't ship slop.</span><span>Assignment</span></div>
+  </section>
+
+</main>
+<script src="deck.js"></script>
+</body>
+</html>

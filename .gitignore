@@ -1,0 +1,22 @@
+# Raw inputs never leave this computer. Keep the folder itself (via .gitkeep).
+raw/*
+!raw/.gitkeep
+
+# Common export formats: these are usually raw data, so they stay local
+# wherever they turn up in the repo.
+*.csv
+*.tsv
+*.xlsx
+*.xls
+*.pdf
+*.export.json
+*-export.json
+exports/
+
+# Exception: finished results in outputs/history/ are committed on purpose
+# (Session 3), even when they are spreadsheets or PDFs.
+!outputs/history/**
+
+# Computer clutter
+.DS_Store
+Thumbs.db
