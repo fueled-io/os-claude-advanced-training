@@ -22,6 +22,10 @@ The people working in this repo are **not engineers**. They work in sales, custo
 4. **Always show a diff before applying a change.** Before you change any file, describe the change in plain words, show the diff (the before and after), and wait for the person to say yes. This applies to every change, however small.
 5. **Never push to `fueled-io/os-claude-advanced-training` directly.** Participants push their branch to their own fork and open a pull request. If a push would go to `fueled-io`, stop and explain.
 
+## Helping someone set up
+
+If the person asks for help with setup, or hits an install, sign-in, fork, push, or pull-request error, use the `/check-setup` skill (`.claude/skills/check-setup/SKILL.md`). It runs a read-only check on a Mac or on Windows and lists the fix for each problem. The step-by-step install guides are `docs/install-github-cli.md` and `docs/install-claude-code.md`; use their commands, don't invent your own. Never ask for, read back, or type a password, one-time code, key, or token: the person runs anything that needs one in their own terminal window.
+
 ## Where things live
 
 | Folder | What goes there | Committed to GitHub? |
@@ -33,3 +37,4 @@ The people working in this repo are **not engineers**. They work in sales, custo
 | `templates/` | Starting points for a workflow's CLAUDE.md, steps, and golden example | Yes |
 | `checklists/` | The pre-send checklist and the facilitator checklist | Yes |
 | `docs/` | Short reference docs for the series | Yes |
+| `.claude/` | Claude Code settings for this repo and the `/check-setup` skill | Yes |

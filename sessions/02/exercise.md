@@ -37,7 +37,8 @@ Reference while you work: [`docs/git-five-verbs.md`](../../docs/git-five-verbs.m
 
 5. [ ] **Start Claude Code.** Type `claude` and press Enter. (Or open Claude Desktop, click **Code**, choose **Local** → **Open folder…**, and pick `os-claude-advanced-training` in your home folder.)
    The first time, it asks whether you trust the files in this folder. Say yes: it's your copy of Opensend's repo.
-   *Done when* Claude Code is waiting for your message.
+   Then type `/check-setup` and press Enter. It checks your tools, your sign-in, your fork, and your branch, and helps fix anything that's off.
+   *Done when* Claude Code says the required checks passed.
 
 6. [ ] **Pick one real workflow.** Choose something you do every week or month, such as a report, a reconciliation, or a customer summary. Write one sentence about it.
    *Done when* you can say what goes in, what comes out, and who uses the result.

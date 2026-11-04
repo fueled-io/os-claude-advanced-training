@@ -17,6 +17,7 @@ Things that happen outside the sessions.
 
 ## From Session 2 on
 
+- [ ] **When someone is stuck on setup,** have them run `/check-setup` in Claude Code inside the repo folder, or the script directly ([`README.md`](../README.md#check-your-setup)), and send you the output.
 - [ ] **Review participants' pull requests.** Each participant opens one pull request in Session 2, and every later push adds to it. Review there; don't merge them. Check each one against the "Never commit" list in [`CONTRIBUTING.md`](../CONTRIBUTING.md).
 - [ ] **If something sensitive is pushed,** have the participant rotate any password or key first. Deleting it in a new commit doesn't remove it from the history, their fork, or the pull request.
 

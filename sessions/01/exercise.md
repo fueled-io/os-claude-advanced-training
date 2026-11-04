@@ -2,7 +2,7 @@
 
 **Goal:** leave the session with a GitHub account, the GitHub CLI (`gh`) signed in, and a check that you can reach this repo, so Session 2 starts on the work instead of setup.
 
-This repo is public, so you can read all of it on github.com before you install anything. The full install guide, with the official source for every step, is [`docs/install-github-cli.md`](../../docs/install-github-cli.md). Keep it open next to this checklist.
+This repo is public, so you can read all of it on github.com before you install anything. The full install guide, with the official source for every step, is [`docs/install-github-cli.md`](../../docs/install-github-cli.md). Keep it open next to this checklist. To have Claude walk you through it, see [`docs/setup-with-claude.md`](../../docs/setup-with-claude.md), part A.
 
 **Before you start:**
 
