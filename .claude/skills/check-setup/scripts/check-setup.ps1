@@ -31,6 +31,10 @@ else { Fail "GitHub CLI (gh) is not installed, or this window was open before yo
 
 if (Have claude) { Pass ("Claude Code installed: " + ((Run claude @('--version')) -split "`n")[0]) }
 else { Fail "Claude Code (claude) not found in this window" "close every terminal window and open a new one; otherwise docs/install-claude-code.md steps 2 and 3" }
+
+$Py = Run python @('--version')
+if ($Py) { Pass "Python installed: $Py" }
+else { Info "Python not found. Only needed from Session 4 (docs/spreadsheets-and-scripts.md)" }
 Write-Output ""
 
 Write-Output "== Accounts"

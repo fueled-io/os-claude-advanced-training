@@ -4,7 +4,7 @@
 
 **Before you start:** Session 1's assignment is done. `gh auth status` says you're logged in, Claude Code answers in the terminal, and you've read [`CONTRIBUTING.md`](../../CONTRIBUTING.md). **This repo is public, and so is your copy of it:** anything you push can be read by anyone.
 
-Reference while you work: [`docs/git-five-verbs.md`](../../docs/git-five-verbs.md).
+Reference while you work: [`docs/git-verbs.md`](../../docs/git-verbs.md).
 
 1. [ ] **Open a terminal.** Mac: `Cmd + Space`, type `Terminal`, press `Return`. Windows: `Windows` key, type `Terminal` (or `PowerShell` if Terminal doesn't show up), press `Enter`.
    *Done when* you see a blinking cursor.
@@ -15,7 +15,7 @@ Reference while you work: [`docs/git-five-verbs.md`](../../docs/git-five-verbs.m
    gh repo fork fueled-io/os-claude-advanced-training --clone
    ```
 
-   *Done when* the terminal finishes without an error and a folder called `os-claude-advanced-training` exists in your home folder. If it says `destination path ... already exists`, you downloaded it before: skip to step 3.
+   *Done when* the terminal finishes without an error and a folder called `os-claude-advanced-training` exists in your home folder. If it says `destination path ... already exists`, you downloaded it in the Session 1 assignment: skip to step 3.
 
 3. [ ] **Go into the folder.** Type:
 
@@ -61,6 +61,6 @@ Reference while you work: [`docs/git-five-verbs.md`](../../docs/git-five-verbs.m
    Claude Code asks before it runs each command. Read its one-line description of the command, and say yes if it matches what you asked for.
    *Done when* you can see your branch on your fork: `github.com/your-username/os-claude-advanced-training`, with your GitHub username.
 
-10. [ ] **Open a pull request.** A pull request asks Sean to look at the changes on your branch. Ask Claude Code: "Open a pull request from my branch to fueled-io/os-claude-advanced-training." Read the title and description before you say yes: they're public too.
+10. [ ] **Open a pull request.** A pull request asks the repo's owner (for this repo, Sean) to review the changes on your branch. Ask Claude Code: "Open a pull request from my branch to fueled-io/os-claude-advanced-training." Read the title and description before you say yes: they're public too.
    You only do this once. Every time you push your branch after this, the pull request picks up the new commits by itself.
    *Done when* your pull request shows on <https://github.com/fueled-io/os-claude-advanced-training/pulls>. Sean reviews it there. It isn't merged: it's how Sean sees and comments on your work.

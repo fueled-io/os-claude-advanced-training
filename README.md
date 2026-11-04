@@ -47,7 +47,7 @@ It also means **anything you push is public**: your copy of the repo, your branc
 - **Stays on your computer:** `raw/`, `derived/`, and `outputs/history/`. `.gitignore` keeps them out of Git.
 - **Need an example?** Make one up: "Client A", "$12,345".
 
-Only Sean Larkin can change this repo. You work on your own copy, called a **fork**, and send your work back as a **pull request** that Sean reviews.
+Only the repo's owner, Sean Larkin, can change this repo. You work on your own copy, called a **fork**, and send your work back as a **pull request**: a request for the owner to review your changes.
 
 ## What you need
 
@@ -61,7 +61,7 @@ Only Sean Larkin can change this repo. You work on your own copy, called a **for
 | | Claude Code | Claude in your terminal. Session 1 assignment |
 | | Claude Desktop | The Claude app, with a **Code** tab that runs Claude Code. Session 1 assignment |
 
-You don't need Node.js, Python, an editor, or anything else.
+You don't need Node.js, an editor, or anything else. **Python** comes up in Session 4, when Claude writes scripts that make spreadsheets: on a Mac it usually comes with Git's install, and on Windows you install it then. See [`docs/spreadsheets-and-scripts.md`](docs/spreadsheets-and-scripts.md).
 
 ## Set up your computer
 
@@ -224,7 +224,7 @@ You'll usually ask Claude Code to do these for you. It shows you what it's about
 3. **Push:** "Push my branch." This sends your commits to your fork on GitHub.
 4. **Pull request (once):** "Open a pull request from my branch to fueled-io/os-claude-advanced-training." Every push after that adds to the same pull request. Sean reviews it there. Participant pull requests aren't merged.
 
-More on each command: [`docs/git-five-verbs.md`](docs/git-five-verbs.md).
+More on each command: [`docs/git-verbs.md`](docs/git-verbs.md).
 
 ### Opening the slides
 
@@ -247,7 +247,7 @@ os-claude-advanced-training/
 ├── derived/               ← files your steps make from the inputs. Never leaves your computer
 ├── outputs/history/       ← your finished results. Never leaves your computer, never overwritten
 ├── golden/                ← your golden example: made-up data, committed
-└── .claude/               ← Claude Code settings and the /check-setup skill for this repo
+└── .claude/               ← Claude Code settings and the /check-setup and /pre-send skills
 ```
 
 | Folder | What goes there | On GitHub? |
@@ -264,6 +264,7 @@ When you start Claude Code in the repo folder, it picks up:
 - **[`CLAUDE.md`](CLAUDE.md):** who you are (not an engineer), how to talk to you, and the rules: never commit real data, check every commit for anything sensitive, never overwrite `outputs/history/`, always show a diff first, never push to Opensend's repo directly. From Session 2 on, your own CLAUDE.md replaces it, built from [`templates/CLAUDE.template.md`](templates/CLAUDE.template.md), which keeps the same rules.
 - **[`.claude/settings.json`](.claude/settings.json):** lets Claude run read-only checks (`git status`, `git diff`, the setup check) without asking each time, and blocks force-pushes, pushes to Opensend's repo, and reading `.env` files.
 - **[`/check-setup`](.claude/skills/check-setup/SKILL.md):** the setup check and how to fix what it finds, on a Mac or on Windows.
+- **[`/pre-send`](.claude/skills/pre-send/SKILL.md):** an example skill that checks a draft against the pre-send checklist before you send it.
 
 ## If something goes wrong
 
@@ -290,7 +291,7 @@ Still stuck? Send Sean Larkin a Slack message with the exact message you see and
 **Rules and checklists**
 
 - [`CONTRIBUTING.md`](CONTRIBUTING.md): what may and may never be committed. Read it before your first commit
-- [`checklists/pre-send.md`](checklists/pre-send.md): run this before you send anything Claude helped you make
+- [`checklists/pre-send.md`](checklists/pre-send.md): run this before you send anything Claude helped you make, or have Claude run it with `/pre-send`
 - [`checklists/facilitator.md`](checklists/facilitator.md): what Sean sets up outside the sessions
 
 **Setup**
@@ -301,12 +302,13 @@ Still stuck? Send Sean Larkin a Slack message with the exact message you see and
 
 **Concepts**
 
-- [Git's five verbs: clone, commit, push, pull, diff](docs/git-five-verbs.md), plus forks and pull requests
+- [Git's six verbs: clone, diff, commit, push, pull, merge](docs/git-verbs.md), plus forks and pull requests
 - [CLAUDE.md and README.md](docs/claude-md-and-readme.md)
 - [Memories, context, skills, and Projects](docs/memory-context-skills.md)
-- [Claude Code vs. Chat and Cowork](docs/code-vs-chat.md)
+- [Claude Code vs. Chat and Cowork, and scheduled tasks](docs/code-vs-chat.md)
 - [Raw, derived, and historical files](docs/file-types.md)
 - [Audit trails](docs/audit-trails.md)
+- [Spreadsheets: edit them, or have a script make them?](docs/spreadsheets-and-scripts.md)
 - [Golden examples and the handoff test](docs/golden-examples.md)
 - [Generative models and decision models](docs/decision-models.md)
 

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Session 1: Don't ship slop.</title>
-<link rel="stylesheet" href="deck.css?v=2026-11-04b">
+<link rel="stylesheet" href="deck.css?v=2026-11-04d">
 </head>
 <body>
 <!-- Source of truth: AGENDA.md and sessions/01/. Change those first, then this deck. -->
@@ -14,22 +14,22 @@
     <span class="eyebrow">We're All Software Developers Now · Session 1 of 4</span>
     <h1 class="hero">Don't ship slop.</h1>
     <p class="lede">Producing output with Claude is nearly free, so the scarce skill is judgment about what's worth producing and verifying that it's right.</p>
-    <p class="meta">60 minutes · 30 teaching · 30 hands-on</p>
+    <p class="meta">60 minutes · 10 policy · 20 teaching · 30 hands-on</p>
   </section>
 
   <section class="slide">
     <span class="eyebrow">Today</span>
     <h2 class="title">Sixty minutes</h2>
     <table class="agenda"><tbody>
-      <tr><td class="t">5 min</td><td>Our AI acceptable use policy, with Jessica Wallen</td></tr>
-      <tr><td class="t">25 min</td><td>What slop is, slop grenades, the sender's contract, the pre-send checklist, a live demo</td></tr>
+      <tr><td class="t">10 min</td><td>Our AI acceptable use policy, with Jessica Wallen</td></tr>
+      <tr><td class="t">20 min</td><td>What slop is, slop grenades, the sender's contract, the pre-send checklist, a live demo</td></tr>
       <tr><td class="t">30 min</td><td>Hands-on: a GitHub account and the GitHub CLI, signed in</td></tr>
     </tbody></table>
     <div class="slide-foot"><span>Session 1 · Don't ship slop.</span><span>Agenda</span></div>
   </section>
 
   <section class="slide quiet">
-    <span class="eyebrow">Preface · 5 minutes</span>
+    <span class="eyebrow">Preface · 10 minutes</span>
     <h2 class="title">Our AI acceptable use policy</h2>
     <p class="copy">Jessica Wallen</p>
     <div class="slide-foot"><span>Session 1 · Don't ship slop.</span><span>Preface</span></div>
@@ -37,12 +37,13 @@
 
   <section class="slide">
     <span class="eyebrow">What is AI slop?</span>
-    <h2 class="title">Four kinds of slop</h2>
+    <h2 class="title">Five kinds of slop</h2>
     <ul class="points">
       <li><strong>Output nobody asked for</strong></li>
       <li><strong>Claims the sender can't defend</strong></li>
       <li><strong>Length that hides the answer</strong></li>
       <li><strong>Work that transfers effort to the reader</strong></li>
+      <li><strong>Terms nobody uses,</strong> made up and said with confidence: "load-bearing", "slice"</li>
     </ul>
     <div class="slide-foot"><span>Session 1 · Don't ship slop.</span><span>Teaching</span></div>
   </section>
@@ -81,7 +82,6 @@
       </div>
     </div>
     <p class="ask">Claude should save your reader time, not add to it.</p>
-    <p class="fine">Each segment is 30 minutes of someone's time · an illustration, not a measurement</p>
     <div class="slide-foot"><span>Session 1 · Don't ship slop.</span><span>Teaching</span></div>
   </section>
 
@@ -94,13 +94,14 @@
 
   <section class="slide">
     <span class="eyebrow">A pre-send checklist</span>
-    <h2 class="title">Three questions before you hit send</h2>
+    <h2 class="title">Four questions before you hit send</h2>
     <ol class="steps">
       <li><strong>Does it answer a question someone asked?</strong></li>
       <li><strong>Could you defend every number?</strong></li>
       <li><strong>Is it shorter than what it replaces?</strong></li>
+      <li><strong>Does it use your reader's words,</strong> not terms Claude made up?</li>
     </ol>
-    <p class="ask">It's a file in the starter repo: <code>checklists/pre-send.md</code></p>
+    <p class="ask">An example skill for checking this is in the starter repo: <code>/pre-send</code></p>
     <div class="slide-foot"><span>Session 1 · Don't ship slop.</span><span>Teaching</span></div>
   </section>
 
@@ -114,6 +115,7 @@
           <li>Answers a question nobody asked</li>
           <li>Numbers with no source</li>
           <li>Longer than what it replaces</li>
+          <li>Invents its own terms</li>
         </ul>
       </div>
       <div class="panel good">
@@ -122,6 +124,7 @@
           <li>Answers the question that was asked</li>
           <li>Every number defensible</li>
           <li>Shorter than what it replaces</li>
+          <li>Uses the reader's words</li>
         </ul>
       </div>
     </div>
@@ -152,16 +155,18 @@
   <section class="slide band">
     <span class="eyebrow">Before Session 2</span>
     <h2 class="title">Assignment</h2>
+    <p class="lede">Didn't finish in class? Finish these before Session 2.</p>
     <ul class="points">
       <li><strong>Install Claude Code and Claude Desktop:</strong> docs/install-claude-code.md</li>
       <li><strong>Confirm <code>gh auth status</code> succeeds</strong></li>
-      <li><strong>Read CONTRIBUTING.md:</strong> this repo is public, and so is everything you push</li>
+      <li><strong>Download your copy of this public repo:</strong> <code>gh repo fork fueled-io/os-claude-advanced-training --clone</code></li>
+      <li><strong>Read CONTRIBUTING.md:</strong> what never goes in this repo, or anything you push</li>
     </ul>
     <p class="fine">Session 2 starts on the work, not on setup. Details: sessions/01/assignment.md</p>
     <div class="slide-foot"><span>Session 1 · Don't ship slop.</span><span>Assignment</span></div>
   </section>
 
 </main>
-<script src="deck.js?v=2026-11-04b"></script>
+<script src="deck.js?v=2026-11-04d"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-# Git's five verbs: clone, commit, push, pull, diff
+# Git's six verbs: clone, diff, commit, push, pull, merge
 
 **Sources (checked 2026-11-03):** git-scm.com reference pages for
 [clone](https://git-scm.com/docs/git-clone) ·
@@ -8,18 +8,22 @@
 [push](https://git-scm.com/docs/git-push) ·
 [pull](https://git-scm.com/docs/git-pull) ·
 [diff](https://git-scm.com/docs/git-diff) ·
+[merge](https://git-scm.com/docs/git-merge) ·
 [switch](https://git-scm.com/docs/git-switch) ·
 [branch](https://git-scm.com/docs/git-branch) ·
 [`gh repo clone`](https://cli.github.com/manual/gh_repo_clone) ·
 [`gh repo fork`](https://cli.github.com/manual/gh_repo_fork) ·
 [`gh pr create`](https://cli.github.com/manual/gh_pr_create) ·
-and [`gh pr checkout`](https://cli.github.com/manual/gh_pr_checkout)
+[`gh pr checkout`](https://cli.github.com/manual/gh_pr_checkout) ·
+and [GitHub: merging a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/merging-a-pull-request)
 
 A **repo** (repository) is a project folder that Git watches. Git remembers every saved version, shows what changed, and lets you hand the whole thing to someone else. GitHub is where the shared copy lives.
 
-You'll usually ask Claude Code to run these for you. Know what each one does, so you can read what Claude is about to do and say no.
+## What's happening under the hood
 
-## The five verbs
+You talk to Claude, and Claude runs Git for you. You don't need to be a software developer or type these commands yourself. But knowing what each one does, in plain terms, lets you read what Claude is about to do and say no when it's wrong.
+
+## The six verbs
 
 | Verb | Command | Official description | In plain words |
 |---|---|---|---|
@@ -28,6 +32,7 @@ You'll usually ask Claude Code to run these for you. Know what each one does, so
 | **commit** | `git add file` then `git commit -m "note"` | "Record changes to the repository" | Save a snapshot of your changes with a note saying what and why |
 | **push** | `git push` | "Update remote refs along with associated objects" | Send your saved commits up to GitHub |
 | **pull** | `git pull` | "Fetch from and integrate with another repository or a local branch" | Bring down what other people pushed since you last looked |
+| **merge** | `git merge branch-name`, or **Merge pull request** on GitHub | "Join two or more development histories together" | Combine the changes from one branch into another. Merging a pull request is how a change lands in `main`. Here, only the repo's owner merges |
 
 ## How they fit together
 
@@ -70,7 +75,7 @@ This repo is public, and only Sean can change it. So you work on a **fork**: you
 | Ask Sean to review your branch (once) | `gh pr create` |
 | Get someone else's pull request onto your computer | `gh pr checkout 12` (their pull request number) |
 
-A **pull request** asks the owner of a repo to look at the changes on your branch. You open it once; each later push adds to it. Participants' pull requests are for review and aren't merged. See [`CONTRIBUTING.md`](../CONTRIBUTING.md) for what may go in one.
+A **pull request** asks the repo's owner to review the changes on your branch, and merge them if they're right. You open it once; each later push adds to it. Participants' pull requests are for review and aren't merged. See [`CONTRIBUTING.md`](../CONTRIBUTING.md) for what may go in one.
 
 ## Going deeper
 

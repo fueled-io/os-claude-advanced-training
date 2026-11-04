@@ -43,6 +43,8 @@ code{white-space:nowrap;font-family:var(--mono);font-size:.9em;background:var(--
 }
 /* busy slides (step lists, tables) step the type down so nothing overflows */
 .slide.top,.slide.dense{font-size:calc(var(--u)*1.6)}
+.slide.top ol.steps li,.slide.top ul.points li{--pad:.62em}
+.slide.top ol.steps,.slide.top ul.points{margin-top:1.2em}
 /* green slides inside a deck are a step lighter than the title (cover) slide */
 .slide.band{background:var(--band);color:var(--on-green);border-color:var(--band)}
 .slide.band.cover{background:var(--green-dark);border-color:var(--green-dark)}
@@ -100,12 +102,13 @@ blockquote.quote{margin:.35em 0 0;font-family:var(--display);font-weight:800;fon
 .band .cite a:hover{color:var(--on-green)}
 
 /* ---------- cost chart: bars to scale, one segment per 30 minutes ---------- */
-.cost{margin-top:1.1em;display:grid;grid-template-columns:auto 1fr auto;column-gap:1em;row-gap:.55em;align-items:center}
+.cost{margin-top:1.5em;display:grid;grid-template-columns:auto 1fr auto;column-gap:1em;row-gap:.9em;align-items:center}
+.cost + .ask{margin-top:1.8em}
 .cost-row{display:contents}
 .cost .who{font-weight:650;color:var(--ink);white-space:nowrap;font-size:.9em}
 .cost .track{display:flex;align-items:center;gap:.5em;min-width:0}
 /* 300 minutes fills the track, leaving room for the label */
-.cost .bar{flex:none;height:1.55em;border-radius:6px;width:calc((100% - 5.2em) * var(--m) / 300);
+.cost .bar{flex:none;height:1.75em;border-radius:6px;width:calc((100% - 5.2em) * var(--m) / 300);
   background:var(--ink) repeating-linear-gradient(90deg,transparent 0 calc(100% * 30 / var(--m) - 3px),var(--card) calc(100% * 30 / var(--m) - 3px) calc(100% * 30 / var(--m)))}
 .cost .saved .bar{background:var(--lime);box-shadow:inset 0 0 0 1px var(--lime-dark)}
 .cost .val{white-space:nowrap;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
@@ -114,31 +117,34 @@ blockquote.quote{margin:.35em 0 0;font-family:var(--display);font-weight:800;fon
 
 /* ---------- lists ---------- */
 ul.points{list-style:none;margin:.9em 0 0;padding:0;max-width:44em}
-ul.points li{position:relative;padding:.42em 0 .42em 1.1em;border-bottom:1px solid var(--border-soft);color:var(--ink-2);line-height:1.45}
+ul.points li{--pad:.42em;position:relative;padding:var(--pad) 0 var(--pad) 1.1em;border-bottom:1px solid var(--border-soft);color:var(--ink-2);line-height:1.45}
 ul.points li:last-child{border-bottom:0}
-ul.points li::before{content:"";position:absolute;left:0;top:1.02em;width:.42em;height:.42em;border-radius:99px;background:var(--green)}
+/* marker centered on the first line: padding + half the 1.45 line height */
+ul.points li::before{content:"";position:absolute;left:0;top:calc(var(--pad) + .725em);transform:translateY(-50%);width:.42em;height:.42em;border-radius:99px;background:var(--green)}
 ul.points strong{color:var(--ink)}
 .band ul.points li{color:color-mix(in srgb,var(--on-green) 88%,transparent);border-color:rgba(245,247,238,.14)}
 .band ul.points li::before{background:var(--lime)}
 
 ol.steps{list-style:none;margin:.9em 0 0;padding:0;counter-reset:s;max-width:46em}
-ol.steps li{counter-increment:s;position:relative;padding:.42em 0 .42em 2em;border-bottom:1px solid var(--border-soft);color:var(--ink-2);line-height:1.45}
+ol.steps li{--pad:.42em;counter-increment:s;position:relative;padding:var(--pad) 0 var(--pad) 2em;border-bottom:1px solid var(--border-soft);color:var(--ink-2);line-height:1.45}
 ol.steps li:last-child{border-bottom:0}
 ol.steps li::before{
-  content:counter(s);position:absolute;left:0;top:.42em;width:1.35em;height:1.35em;border-radius:99px;
-  background:var(--green-dark);color:var(--on-green);font-size:.82em;font-weight:700;
+  content:counter(s);position:absolute;left:0;width:1.35em;height:1.35em;border-radius:99px;
+  background:var(--green-dark);color:var(--on-green);font-size:.82em;font-weight:700;line-height:1;
   display:flex;align-items:center;justify-content:center;
+  /* centered on the first line of text; the badge's em is .82 of the item's */
+  top:calc((var(--pad) + .725em) / .82);transform:translateY(-50%);
 }
 ol.steps strong{color:var(--ink)}
 
 /* ---------- tables ---------- */
 table.agenda{border-collapse:collapse;width:100%;max-width:40em;margin-top:.8em}
-.agenda td{padding:.5em 0;border-bottom:1px solid var(--border-soft);vertical-align:baseline}
+.agenda td{padding:.75em 0;border-bottom:1px solid var(--border-soft);vertical-align:baseline}
 .agenda tr:last-child td{border-bottom:0}
 .agenda .t{font-variant-numeric:tabular-nums;white-space:nowrap;width:5.5em;color:var(--green-dark);font-weight:650}
 
-table.grid{border-collapse:collapse;width:100%;margin-top:.8em;font-size:.88em;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
-.grid th,.grid td{text-align:left;padding:.5em .8em;border-bottom:1px solid var(--border-soft);vertical-align:top}
+table.grid{border-collapse:collapse;width:100%;margin-top:1.1em;font-size:.88em;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.grid th,.grid td{text-align:left;padding:.72em .9em;border-bottom:1px solid var(--border-soft);vertical-align:top}
 .grid thead th{background:var(--card-2);font-weight:650;font-size:.72em;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
 .grid tbody tr:last-child td{border-bottom:0}
 .grid td:first-child{white-space:nowrap}
@@ -147,6 +153,9 @@ table.grid{border-collapse:collapse;width:100%;margin-top:.8em;font-size:.88em;b
 .callout{border-left:3px solid var(--green);background:var(--card-2);border-radius:0 var(--radius) var(--radius) 0;padding:.8em 1.1em;margin-top:1em;max-width:44em;color:var(--ink-2)}
 .callout .tag{font-size:.62em;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green);display:block;margin-bottom:.35em}
 .cols{display:grid;grid-template-columns:1fr 1fr;gap:1.2em;margin-top:1em}
+.agenda-cols{margin-top:1.3em}
+.agenda-cols .panel h3{color:var(--green-dark)}
+.agenda-cols ul.points li{--pad:.36em}
 .panel{border:1px solid var(--border);border-radius:var(--radius);background:var(--card);padding:.9em 1.1em}
 .panel h3{font-size:1.15em;font-weight:800}
 .panel.bad{background:var(--card-2)}
@@ -159,18 +168,17 @@ table.grid{border-collapse:collapse;width:100%;margin-top:.8em;font-size:.88em;b
 .band .slide-foot{color:color-mix(in srgb,var(--on-green) 50%,transparent)}
 
 /* ---------- index page ---------- */
-.index-wrap{max-width:1000px;margin:0 auto;padding:48px 16px 64px}
-.index-head{background:var(--green-dark);color:var(--on-green);border-radius:var(--radius);padding:36px 40px;box-shadow:var(--shadow)}
-.index-head h1{color:var(--on-green);font-weight:800;font-size:clamp(2rem,6vw,2.8rem);line-height:1.02}
-.index-head .eyebrow{font-size:.72rem;color:var(--lime)}
-.index-head p{margin-top:12px;color:color-mix(in srgb,var(--on-green) 85%,transparent);max-width:44em}
-.session-list{list-style:none;margin:20px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.session-list a{display:block;height:100%;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px 22px;text-decoration:none;color:var(--ink-2)}
+.index-wrap{max-width:1180px;margin:0 auto;padding:56px 24px 72px}
+.index-head{background:var(--green-dark);color:var(--on-green);border-radius:var(--radius);padding:48px 52px;box-shadow:var(--shadow)}
+.index-head h1{color:var(--on-green);font-weight:800;font-size:clamp(2.4rem,6vw,3.8rem);line-height:1.02;margin-top:6px}
+.index-head .eyebrow{font-size:.9rem;color:var(--lime)}
+.index-head p{margin-top:16px;font-size:1.3rem;line-height:1.5;color:color-mix(in srgb,var(--on-green) 85%,transparent);max-width:40em}
+.session-list{list-style:none;margin:24px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.session-list a{display:block;height:100%;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px 30px;text-decoration:none;color:var(--ink-2)}
 .session-list a:hover{border-color:var(--green)}
-.session-list .eyebrow{font-size:.68rem}
-.session-list h2{font-weight:800;font-size:1.45rem;color:var(--green-dark);margin-top:4px}
-.session-list p{margin-top:6px;font-size:.92rem;line-height:1.5}
-.index-note{margin-top:20px;font-size:.85rem;color:var(--ink-3)}
+.session-list .eyebrow{font-size:.85rem}
+.session-list h2{font-weight:800;font-size:2rem;line-height:1.1;color:var(--green-dark);margin-top:6px}
+.session-list p{margin-top:10px;font-size:1.15rem;line-height:1.5}
 @media (max-width:640px){
   .session-list{grid-template-columns:1fr}
   .index-head{padding:26px 22px}

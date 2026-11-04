@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Session 4: Same result, every time, for everyone</title>
-<link rel="stylesheet" href="deck.css?v=2026-11-04b">
+<link rel="stylesheet" href="deck.css?v=2026-11-04d">
 </head>
 <body>
 <!-- Source of truth: AGENDA.md, sessions/04/, and docs/. Change those first, then this deck. -->
@@ -21,7 +21,7 @@
     <span class="eyebrow">Today</span>
     <h2 class="title">Sixty minutes</h2>
     <table class="agenda"><tbody>
-      <tr><td class="t">20 min</td><td>Procedures as files · pinned inputs and output formats · golden examples · the handoff test · the honest limits</td></tr>
+      <tr><td class="t">20 min</td><td>Procedures as files · pinned inputs and output formats · scripts that make spreadsheets · golden examples · the handoff test · the honest limits</td></tr>
       <tr><td class="t">10 min</td><td>Two kinds of model</td></tr>
       <tr><td class="t">30 min</td><td>Hands-on: swap repos with a partner and run their workflow</td></tr>
     </tbody></table>
@@ -42,6 +42,31 @@
       <li><strong>Explicit output formats:</strong> columns, order, rounding, file name</li>
     </ul>
     <p class="ask">A sample output file in the repo is the best spec.</p>
+    <div class="slide-foot"><span>Session 4 · Same result, every time</span><span>Teaching</span></div>
+  </section>
+
+  <section class="slide dense">
+    <span class="eyebrow">Spreadsheets</span>
+    <h2 class="title">Script the spreadsheet. Don't edit it.</h2>
+    <div class="cols">
+      <div class="panel bad">
+        <h3>Claude edits the spreadsheet</h3>
+        <ul class="points">
+          <li>Every run starts over, and can come out differently</li>
+          <li>No diff: you can't see which cells changed, or why</li>
+          <li>Next month, you ask again and hope</li>
+        </ul>
+      </div>
+      <div class="panel good">
+        <h3>Claude writes a Python script</h3>
+        <ul class="points">
+          <li>Reads <code>raw/</code>, writes a new file in <code>outputs/history/</code></li>
+          <li>Same input, same spreadsheet, every run</li>
+          <li>The script is a file: review it once, rerun it any time</li>
+        </ul>
+      </div>
+    </div>
+    <p class="fine">How to ask for it, and what you need: docs/spreadsheets-and-scripts.md</p>
     <div class="slide-foot"><span>Session 4 · Same result, every time</span><span>Teaching</span></div>
   </section>
 
@@ -123,6 +148,6 @@
   </section>
 
 </main>
-<script src="deck.js?v=2026-11-04b"></script>
+<script src="deck.js?v=2026-11-04d"></script>
 </body>
 </html>

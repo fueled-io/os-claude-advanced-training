@@ -38,6 +38,10 @@ else fail "GitHub CLI (gh) is not installed, or this terminal was open before yo
 
 if have claude; then pass "Claude Code installed: $(claude --version 2>/dev/null | head -1)"
 else fail "Claude Code (claude) not found in this terminal" "docs/install-claude-code.md steps 2 and 3 (including the PATH fix)"; fi
+
+if have python3 && python3 --version >/dev/null 2>&1; then pass "Python installed: $(python3 --version 2>&1)"
+elif have python && python --version >/dev/null 2>&1; then pass "Python installed: $(python --version 2>&1)"
+else info "Python not found. Only needed from Session 4 (docs/spreadsheets-and-scripts.md)"; fi
 echo
 
 echo "== Accounts"

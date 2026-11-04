@@ -4,7 +4,7 @@
 
 ## Overview
 
-Each session is 30 minutes of teaching and 30 minutes hands-on, with a small assignment that feeds the next session. Everyone finishes the series with a repo a teammate can clone and run.
+Each session is 30 minutes of teaching and 30 minutes hands-on (Session 1: 10 minutes on our AI acceptable use policy, 20 teaching, 30 hands-on), with a small assignment that feeds the next session. Everyone finishes the series with a repo a teammate can clone and run.
 
 The series teaches four things: how to avoid sending co-workers output nobody asked for, how to use GitHub as the backend for Claude projects that can be shared, how to break work into steps, and how to make work that produces the same result between team members and sessions.
 
@@ -14,19 +14,20 @@ This agenda, the slides, the pre-send checklist, and every template lives in the
 
 **Premise:** Producing output with Claude is nearly free, so the scarce skill is judgment about what's worth producing and verifying that it's right.
 
-**Preface (5 minutes):** Jessica Wallen introduces our AI acceptable use policy.
+**Preface (10 minutes):** Jessica Wallen introduces our AI acceptable use policy.
 
 **Teaching**
 
-- What is AI slop? Output nobody asked for, claims the sender can't defend, length that hides the answer, work that transfers effort to the reader
+- What is AI slop? Output nobody asked for, claims the sender can't defend, length that hides the answer, work that transfers effort to the reader, terms nobody uses (made up and said with confidence: "load-bearing", "slice")
+- Slop grenades: Tobi Lütke's name for AI output sent without reading. Skipping review saves the sender 30 minutes and costs every reader 30
 - The sender's contract: you own every claim in anything you send. Claude drafts, you sign
-- A pre-send checklist: does it answer a question someone asked, could you defend every number, is it shorter than what it replaces. The checklist is a file in the starter repo
+- A pre-send checklist: does it answer a question someone asked, could you defend every number, is it shorter than what it replaces, does it use your reader's words. An example skill for checking this is in the starter repo
 - Live demo: the same request done as slop and done well, side by side
 - The mindset for the rest of the series: work lives in files and folders, not in chat history
 
 **Hands-on:** Install the GitHub CLI (`gh`), create a GitHub account, and run `gh auth login`. Everyone leaves authenticated so Session 2 starts on the work, not on setup.
 
-**Assignment:** Install Claude Code and Claude Desktop. Confirm `gh auth status` succeeds.
+**Assignment (for anything not finished in class):** Install Claude Code and Claude Desktop. Confirm `gh auth status` succeeds. Download your copy of the public starter repo. Read CONTRIBUTING.md.
 
 ## Session 2: GitHub as your backend
 
@@ -34,11 +35,14 @@ This agenda, the slides, the pre-send checklist, and every template lives in the
 
 **Teaching**
 
-- The five verbs: clone, commit, push, pull, diff. Branches get one slide
+- Under the hood: you talk to Claude, and Claude runs Git. You don't type the commands, but you should know what they do
+- The six verbs: clone, diff, commit, push, pull, merge. Branches, forks, and pull requests get one slide
 - README and CLAUDE.md: the two files that make a repo self-explaining to a person and to Claude
 - Memories vs. context vs. skills, and where CLAUDE.md fits
 - Claude Code vs. Claude Chat/Cowork: which one for which job
+- Scheduled tasks (formerly routines): cloud tasks vs. local tasks in Claude Desktop
 - .gitignore for raw inputs: exports, PDFs, and customer data stay local and never leave the machine
+- What .gitignore can't catch: personal information, passwords, API keys, and tokens never go in any repo, public or private
 - Why Artifacts and Projects aren't the source of truth: no version history, no diff, no merge, owner-only editing on skills, and instructions drift between accounts. Projects and skills are where you deploy a procedure; the repo is where it lives
 
 **Hands-on:** Clone the starter repo, write a CLAUDE.md for one real workflow, have Claude Code make a change, and read the diff before accepting it.
@@ -70,6 +74,7 @@ This agenda, the slides, the pre-send checklist, and every template lives in the
 
 - Procedures as files, never as memory of what worked last time
 - Pinned inputs and explicit output formats. A sample output file in the repo is the best spec
+- Spreadsheets: have Claude write a Python script that makes the spreadsheet, rather than editing the spreadsheet directly
 - Golden examples: one known input with a known correct output, so anyone can check the workflow still works
 - The handoff test: a teammate clones the repo cold and runs it. A different answer means the repo is missing something
 - The honest limits: claude.ai can't pin model or effort per project, so some workflows need a real agent behind an API. If yours is one of them, flag it to Sean and we'll scope it

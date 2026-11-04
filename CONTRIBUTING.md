@@ -19,6 +19,8 @@ Read this before your first commit. Claude Code follows the same rules (they're 
 - Your **CLAUDE.md**, **WORKFLOW.md**, and **step files**: the instructions for the work, written so they make sense without naming a client or quoting a real number.
 - Your **golden example** in `golden/`, built from **made-up data**: invented names, invented amounts. See [`docs/golden-examples.md`](docs/golden-examples.md).
 
+**Private repos too.** Personal information, passwords, keys, and tokens don't belong in any repo, public or private. They hide inside files you do commit (a CLAUDE.md, a step file, a commit message), so `.gitignore` can't catch them: read every diff.
+
 **When you need a real-looking example,** make one up: "Client A", "Acme Co", "$12,345". Say where the real thing lives in words ("the monthly bookings export from the billing system"), never with a link or the data itself.
 
 ## Before every commit
@@ -36,7 +38,7 @@ Read this before your first commit. Claude Code follows the same rules (they're 
 
 Nobody pushes to this repo directly. Only Sean Larkin can change it.
 
-- **Participants:** you work on your own copy (a **fork**) and send your work back as a **pull request**: a request for Sean to look at your changes. Sean reviews it there. Session 2 walks you through it. Your pull request is how Sean sees and comments on your work; it isn't merged into the course materials.
+- **Participants:** you work on your own copy (a **fork**) and send your work back as a **pull request**: a request for the repo's owner (Sean, for this repo) to review your changes. Sean reviews it there. Session 2 walks you through it. Your pull request is how Sean sees and comments on your work; it isn't merged into the course materials.
 - **Fixes to the course materials** (a typo, a broken step): open a pull request too. Sean reviews and merges it.
 
 `main` only changes through a reviewed pull request.
