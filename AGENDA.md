@@ -4,7 +4,7 @@
 
 ## Overview
 
-Each session is 30 minutes of teaching and 30 minutes hands-on (Session 1: 10 minutes on our AI acceptable use policy, 20 teaching, 30 hands-on), with a small assignment that feeds the next session. Everyone finishes the series with a repo a teammate can clone and run.
+Each session is 30 minutes of teaching and 30 minutes hands-on (Session 1: a 5-minute policy update, 20 teaching, 35 hands-on), with a small assignment that feeds the next session. Everyone finishes the series with a repo a teammate can clone and run.
 
 The series teaches four things: how to avoid sending co-workers output nobody asked for, how to use GitHub as the backend for Claude projects that can be shared, how to break work into steps, and how to make work that produces the same result between team members and sessions.
 
@@ -14,7 +14,7 @@ This agenda, the slides, the pre-send checklist, and every template lives in the
 
 **Premise:** Producing output with Claude is nearly free, so the scarce skill is judgment about what's worth producing and verifying that it's right.
 
-**Preface (10 minutes):** Jessica Wallen introduces our AI acceptable use policy.
+**Policy update (5 minutes):** A revised, streamlined AI acceptable use policy is in development and will be available in the coming weeks.
 
 **Teaching**
 

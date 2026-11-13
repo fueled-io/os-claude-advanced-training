@@ -1,12 +1,12 @@
 # Session 1: Don't ship slop.
 
-**60 minutes:** 10 minutes on our AI acceptable use policy, 20 minutes of teaching, then 30 minutes hands-on.
+**60 minutes:** a 5-minute update on our AI acceptable use policy, 20 minutes of teaching, then 35 minutes hands-on.
 
 **Premise:** Producing output with Claude is nearly free, so the scarce skill is judgment about what's worth producing and verifying that it's right.
 
-## Preface (10 minutes)
+## Policy update (5 minutes)
 
-Jessica Wallen introduces our AI acceptable use policy (link coming). It decides what you may give Claude to read, including the files you'll put in `raw/` from Session 2 on.
+A revised, streamlined AI acceptable use policy is in development and will be available in the coming weeks. It decides what you may give Claude to read, including the files you'll put in `raw/` from Session 2 on. Until then, if you're not sure whether something can go into Claude, ask Sean before you use it.
 
 ## Teaching (20 minutes)
 
@@ -17,7 +17,7 @@ Jessica Wallen introduces our AI acceptable use policy (link coming). It decides
 - **Live demo:** the same request done as slop and done well, side by side.
 - **The mindset for the rest of the series:** work lives in files and folders, not in chat history.
 
-## Hands-on (30 minutes)
+## Hands-on (35 minutes)
 
 Create a GitHub account, install Git and the GitHub CLI (`gh`), run `gh auth login`, and check you can reach this repo. Everyone leaves authenticated so Session 2 starts on the work, not on setup.
 
