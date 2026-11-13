@@ -12,8 +12,8 @@ Things that happen outside the sessions.
 
 ## Before Session 1
 
-- [ ] **Add the AI acceptable use policy link** to [`sessions/01/agenda.md`](../sessions/01/agenda.md) when it's ready. It says "(link coming)" until then.
-- [ ] **Suggest Mac users run `xcode-select --install` the day before.** It downloads Apple's command line tools, which can take a large part of a 30-minute hands-on.
+- [ ] **Link the revised AI acceptable use policy** from the series materials when it's ready (in development, expected in the coming weeks). Session 1 doesn't cover it.
+- [ ] **Suggest Mac users run `xcode-select --install` the day before.** It downloads Apple's command line tools, which can take a large part of the hands-on.
 
 ## From Session 2 on
 

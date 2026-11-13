@@ -26,7 +26,7 @@ By the end of the series you'll have one of your own workflows written down in y
 
 ## The four sessions
 
-Each session is 60 minutes: 30 minutes of teaching, then 30 minutes hands-on. Each folder has the agenda, the hands-on exercise as a numbered checklist with a "done when" for every step, and the assignment.
+Each session is 60 minutes: about 30 minutes of teaching, then about 30 minutes hands-on. Each folder has the agenda, the hands-on exercise as a numbered checklist with a "done when" for every step, and the assignment.
 
 | Session | You leave with | Agenda | Hands-on | Assignment |
 |---|---|---|---|---|
