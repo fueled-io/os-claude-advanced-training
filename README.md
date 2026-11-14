@@ -1,5 +1,7 @@
 # We're All Software Developers Now
 
+> This branch holds Mateus Paderes's Customer Lifecycle review workflow: see `CLAUDE.md`.
+
 The starter repo for Opensend's four-session training on working with Claude, using **Claude Code** with **GitHub** as the place your work lives. It works the same on a **Mac** and on **Windows**.
 
 **Contents:**
